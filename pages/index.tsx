@@ -90,10 +90,10 @@ export default function Home() {
                         <a
                           aria-label="email"
                           data-inlinesvg=".inlineSvgFile-3"
-                          href="mailto:divyanshutyagiofficial@gmail.com?subject=Reachout - Mail from divyanshutyagiofficial.com"
+                          href="mailto:divyanshutyagiofficial@gmail.com?subject=Inquiry - Mail from divyanshutyagiofficial.com"
                         >
                           <svg
-                            version={1.0}
+                            version={"1.0"}
                             xmlns="http://www.w3.org/2000/svg"
                             width="857.333"
                             height={620}
@@ -108,7 +108,7 @@ export default function Home() {
                         <a
                           aria-label="github"
                           data-inlinesvg=".inlineSvgFile-2"
-                          href="https://github.com/Dunks1980/"
+                          href="https://github.com/dvynshu95"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ export default function Home() {
                           </svg>
                         </a>{" "}
                       </li>
-                      <li className="npm">
+                      {/* <li className="npm">
                         {" "}
                         <a
                           aria-label="npm"
@@ -156,7 +156,7 @@ export default function Home() {
                             ></path>
                           </svg>
                         </a>{" "}
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </header>
@@ -191,7 +191,7 @@ export default function Home() {
                       </div>{" "}
                       <span>
                         <p>
-                          This is Divyanshu Tyagi, I'm a full-stack developer
+                          This is Divyanshu Tyagi. I&apos;m a full-stack developer
                           based in beautiful city of Haridwar, Uttarakhand,
                           <b>India</b>. I have {new Date().getFullYear() - 2017}
                           + years of professional work experience in
@@ -202,7 +202,7 @@ export default function Home() {
                           domain compliant real time patient monitoring system .
                         </p>
                         <p>
-                          I'm passionate about cutting-edge systems,
+                          I&apos;m passionate about cutting-edge systems,
                           pixel-perfect, beautiful interfaces and intuitively
                           implemented UX.{" "}
                         </p>
@@ -259,7 +259,7 @@ export default function Home() {
                           upload and download created projects and files, login
                           to save upto 5 projects and can be installed as a
                           progressive web application. The stack is Laravel for
-                          the backend/API's and vanilla JS for the frontend. The
+                          the backend/API&apos;s and vanilla JS for the frontend. The
                           git repository for this one is private at the moment.{" "}
                         </p>{" "}
                         <button>
@@ -326,12 +326,12 @@ export default function Home() {
                       <span>
                         <p>
                           An easy to use, lightweight library for
-                          web-components. It doesn't need a build step but can
-                          be included in a build step if you want to. It's a
+                          web-components. It doesn&apos;t need a build step but can
+                          be included in a build step if you want to. It&apos;s a
                           great way to create reusable components for your
-                          projects. It's available as a NPM package and doesn't
+                          projects. It&apos;s available as a NPM package and doesn&apos;t
                           use any dependencies and is 11kb minified. It also
-                          doesn't use eval or new Function so can be used in
+                          doesn&apos;t use eval or new Function so can be used in
                           strict CSP polices without a build step.{" "}
                         </p>{" "}
                         <button>
@@ -379,7 +379,7 @@ export default function Home() {
                           This is a system design specifically for a Healthcare
                           client which was build around the need of Patient
                           Feedback. The App supports the feature such as survey
-                          on the daily basis to monitor the patient's behaviour
+                          on the daily basis to monitor the patient&apos;s behaviour
                           and feedback.
                         </p>{" "}
                         <button>
@@ -436,10 +436,10 @@ export default function Home() {
                         <a
                           rel="noopener"
                           target="_blank"
-                          href="https://bayjs.org"
+                          href="https://mycompliance.netlify.app/employees"
                         >
                           {" "}
-                          <span>Bay.js</span>
+                          <span>Wallzone Trace</span>
                         </a>{" "}
                         <a
                           rel="noopener"
