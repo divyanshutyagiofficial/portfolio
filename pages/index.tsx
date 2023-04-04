@@ -431,7 +431,7 @@ export default function Home() {
                           href="https://www.pickndplay.com/song/queries?Id=XXYlFuWEuKI"
                         >
                           {" "}
-                          <span>Pick n' play</span>
+                          <span>Pick n&apos; play</span>
                         </a>{" "}
                         <a
                           rel="noopener"
