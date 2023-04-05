@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
+import Counter from "../components/counter";
 import styles from "../styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -191,9 +192,10 @@ export default function Home() {
                       </div>{" "}
                       <span>
                         <p>
-                          This is Divyanshu Tyagi. I&apos;m a full-stack developer
-                          based in beautiful city of Haridwar, Uttarakhand,
-                          <b>India</b>. I have {new Date().getFullYear() - 2017}
+                          This is Divyanshu Tyagi. I&apos;m a full-stack
+                          developer based in beautiful city of Haridwar,
+                          Uttarakhand, 
+                          <b> India</b>. I have {new Date().getFullYear() - 2017}
                           + years of professional work experience in
                           independently developed projects, as well as
                           contribution in various kinds of front-end, back-end
@@ -259,8 +261,9 @@ export default function Home() {
                           upload and download created projects and files, login
                           to save upto 5 projects and can be installed as a
                           progressive web application. The stack is Laravel for
-                          the backend/API&apos;s and vanilla JS for the frontend. The
-                          git repository for this one is private at the moment.{" "}
+                          the backend/API&apos;s and vanilla JS for the
+                          frontend. The git repository for this one is private
+                          at the moment.{" "}
                         </p>{" "}
                         <button>
                           {" "}
@@ -326,13 +329,14 @@ export default function Home() {
                       <span>
                         <p>
                           An easy to use, lightweight library for
-                          web-components. It doesn&apos;t need a build step but can
-                          be included in a build step if you want to. It&apos;s a
-                          great way to create reusable components for your
-                          projects. It&apos;s available as a NPM package and doesn&apos;t
-                          use any dependencies and is 11kb minified. It also
-                          doesn&apos;t use eval or new Function so can be used in
-                          strict CSP polices without a build step.{" "}
+                          web-components. It doesn&apos;t need a build step but
+                          can be included in a build step if you want to.
+                          It&apos;s a great way to create reusable components
+                          for your projects. It&apos;s available as a NPM
+                          package and doesn&apos;t use any dependencies and is
+                          11kb minified. It also doesn&apos;t use eval or new
+                          Function so can be used in strict CSP polices without
+                          a build step.{" "}
                         </p>{" "}
                         <button>
                           {" "}
@@ -379,8 +383,8 @@ export default function Home() {
                           This is a system design specifically for a Healthcare
                           client which was build around the need of Patient
                           Feedback. The App supports the feature such as survey
-                          on the daily basis to monitor the patient&apos;s behaviour
-                          and feedback.
+                          on the daily basis to monitor the patient&apos;s
+                          behaviour and feedback.
                         </p>{" "}
                         <button>
                           {" "}
@@ -420,7 +424,8 @@ export default function Home() {
                   <div className="spacer" />
                   <div className="main-projects">
                     <h2>
-                      Projects{"  -  "} <span className="counter">43</span>
+                      Projects
+                      {/* {"  -  "}{" "} <span> <Counter /> <span className={styles.shyText}>and counting...</span></span>*/}
                     </h2>
                     <div className="project-wrapper">
                       <div>
