@@ -190,7 +190,7 @@ export default function Home() {
                           ></path>
                         </svg>{" "}
                       </div>{" "}
-                      <span>
+                      <span id="introduction">
                         <p>
                         I am Divyanshu Tyagi, a seasoned Full-Stack Developer based in the picturesque city of Haridwar, Uttarakhand, India. Armed with over six years of intensive professional experience, I have a proven track record in successfully spearheading and independently crafting an array of diverse projects.
                         I am adept at designing and implementing both front-end and back-end systems, catering to an extensive clientele across multiple industries. My repertoire spans from dynamic real-time Chat applications, intricate E-commerce platforms, to niche and highly compliant real-time patient monitoring systems.
