@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/divyanshutyagiofficial-portfolio-webapp',
+  basePath: '',
 }
 
 module.exports = nextConfig
