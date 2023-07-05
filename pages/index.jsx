@@ -254,7 +254,7 @@ export default function Home() {
                       <a
                         rel="noopener"
                         target="_blank"
-                        href="https://citib2badmin.incedopay.com"
+                        href="https://citib2badmin.incedopay.com" 
                       >
                         {" "}
                         <span>Incedo Pay B2B Admin portal</span>
