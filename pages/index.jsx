@@ -235,15 +235,16 @@ export default function Home() {
                     </div>{" "}
                     <span id="introduction" >
                       <p>
-                        Hi, I'm Divyanshu Tyagi, a seasoned Full-Stack Developer with over 6+ years of experience. I've worked on a wide range of projects, from dynamic real-time chat applications to intricate e-commerce platforms. I'm always up for a challenge, and I love to learn new technologies.
-                        I'm passionate about creating pixel-perfect, visually stunning interfaces that are also intuitive and user-friendly. I believe that great design is essential for any successful product.
-                        I'm also a meticulous developer who takes the time to understand your needs and deliver a high-quality product. I'm always available to answer questions and provide support.
-                        
-                        I have expertise in working with cross-domain compliances like PCIs, HIPPA, and experience in achieving the non-functional requirements like security, accessibility, and other things which are equally required in a web app.
-                        If you're looking for a dedicated and experienced Full-Stack Developer, I'd love to hear from you. Let's talk about how we can transform your vision into reality.
+                        Hi, I&apos;m Divyanshu Tyagi, a seasoned Full-Stack Developer with over 6+ years of experience. I&apos;ve worked on a wide range of projects, from dynamic real-time chat applications to intricate e-commerce platforms. I&apos;m always up for a challenge, and I love to learn new technologies.
+                        I&apos;m passionate about creating pixel-perfect, visually stunning interfaces that are also intuitive and user-friendly. I believe that great design is essential for any successful product.
+                        I&apos;m also a meticulous developer who takes the time to understand your needs and deliver a high-quality product. I&apos;m always available to answer questions and provide support.
 
-                        <strong>Check out!</strong> some of the best Projects I've worked on!
+                        I have expertise in working with cross-domain compliances like PCIs, HIPPA, and experience in achieving the non-functional requirements like security, accessibility, and other things which are equally required in a web app.
+                        If you&apos;re looking for a dedicated and experienced Full-Stack Developer, I&apos;d love to hear from you. Let&apos;s talk about how we can transform your vision into reality.
+
+                        <strong>Check out!</strong> some of the best Projects I&apos;ve worked on!
                       </p>
+
                     </span>
                   </div>
                 </div>
