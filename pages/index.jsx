@@ -235,10 +235,14 @@ export default function Home() {
                     </div>{" "}
                     <span id="introduction" >
                       <p>
-                        I am Divyanshu Tyagi, a seasoned Full - Stack Developer based in the picturesque city of Haridwar, Uttarakhand, India.Armed with over six years of intensive professional experience, I have a proven track record in successfully spearheading and independently crafting an array of diverse projects.
-                        I am adept at designing and implementing both front - end and back - end systems, catering to an extensive clientele across multiple industries.My repertoire spans from dynamic real - time Chat applications, intricate E - commerce platforms, to niche and highly compliant real - time patient monitoring systems.
-                        As a tech enthusiast, I remain at the forefront of cutting - edge systems, continually integrating novel technologies to optimize performance and efficiency.My approach marries aesthetics and functionality, wherein I prioritize the creation of pixel - perfect, visually stunning interfaces, paired with intuitively designed user experiences.
-                        In entrusting your project to me, you gain a committed partner who strives for excellence, meticulously attuned to the distinct needs of your business, and unwavering in the pursuit of achieving your goals.I look forward to exploring how we can transform your vision into reality, creating bespoke solutions that exceed expectations.
+                        Hi, I'm Divyanshu Tyagi, a seasoned Full-Stack Developer with over 6+ years of experience. I've worked on a wide range of projects, from dynamic real-time chat applications to intricate e-commerce platforms. I'm always up for a challenge, and I love to learn new technologies.
+                        I'm passionate about creating pixel-perfect, visually stunning interfaces that are also intuitive and user-friendly. I believe that great design is essential for any successful product.
+                        I'm also a meticulous developer who takes the time to understand your needs and deliver a high-quality product. I'm always available to answer questions and provide support.
+                        
+                        I have expertise in working with cross-domain compliances like PCIs, HIPPA, and experience in achieving the non-functional requirements like security, accessibility, and other things which are equally required in a web app.
+                        If you're looking for a dedicated and experienced Full-Stack Developer, I'd love to hear from you. Let's talk about how we can transform your vision into reality.
+
+                        <strong>Check out!</strong> some of the best Projects I've worked on!
                       </p>
                     </span>
                   </div>
@@ -254,7 +258,7 @@ export default function Home() {
                       <a
                         rel="noopener"
                         target="_blank"
-                        href="https://citib2badmin.incedopay.com" 
+                        href="https://citib2badmin.incedopay.com"
                       >
                         {" "}
                         <span>Incedo Pay B2B Admin portal</span>
@@ -271,7 +275,8 @@ export default function Home() {
                       <a
                         rel="noopener"
                         target="_blank"
-                        href="https://www.pickndplay.com/song/queries?Id=XXYlFuWEuKI"
+                        // href="https://www.pickndplay.com/song/queries?Id=XXYlFuWEuKI"
+                        href="https://www.pickndplay.com"
                       >
                         {" "}
                         <span> Pick n & apos; play </span>
