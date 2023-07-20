@@ -134,7 +134,7 @@ main {
   display: block;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview {
+.main-container .main-container-inner .inner-container section.projects-overview {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -146,14 +146,17 @@ main {
   align-items: flex-start;
   display: flex;
   transform: translateZ(0);
+  margin-top: 60px;
+  overflow: auto;
 }
 
 @media screen and (min-width: 900px) {
-  .main-container .main-container-inner .inner-container main.projects-overview {
+  .main-container .main-container-inner .inner-container section.projects-overview {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-left: 50px;
+    margin-top: 15px;
   }
 }
 
@@ -178,24 +181,24 @@ main {
 }
 
 @media screen and (min-width: 900px) {
-  .main-container .main-container-inner .inner-container main.projects-overview div {
+  .main-container .main-container-inner .inner-container section.projects-overview div {
     flex: 1;
   }
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message {
   flex-basis: 53.4752%;
   position: relative;
 }
 
 @media screen and (min-width: 900px) {
-  .main-container .main-container-inner .inner-container main.projects-overview div.spacer {
+  .main-container .main-container-inner .inner-container section.projects-overview div.spacer {
     max-width: 130px;
     min-width: 90px;
   }
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects {
   flex-basis: 30.9017%;
 }
 
@@ -229,14 +232,14 @@ main {
   display: flex;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message .welcome-message {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message .welcome-message {
   transform-origin: 0;
   opacity: 1;
   transition: all 0.2s linear;
   transform: scaleX(1);
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message .individual-project {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message .individual-project {
   transform-origin: 100%;
   opacity: 0;
   width: 100%;
@@ -251,7 +254,7 @@ h2 {
   font-weight: 100;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects h2 {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects h2 {
   margin-top: 30px;
   margin-bottom: 30px;
   font-family: Montserrat-Regular;
@@ -259,12 +262,12 @@ h2 {
   font-weight: 100;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper {
   font-size: 16px;
   position: relative;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper:before {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper:before {
   content: " ";
   width: 90px;
   height: 90px;
@@ -281,7 +284,7 @@ h2 {
   left: -2px;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper:after {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper:after {
   content: " ";
   width: 90px;
   height: 90px;
@@ -298,11 +301,11 @@ h2 {
   left: -2px;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper:hover:before {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper:hover:before {
   opacity: 0;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper:hover:after {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper:hover:after {
   opacity: 1;
 }
 
@@ -316,7 +319,7 @@ h2 {
   transition: all 0.3s ease-in-out;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message span {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message span {
   margin-left: 30px;
   font-size: 0.9em;
   font-weight: 100;
@@ -325,7 +328,7 @@ h2 {
   position: relative;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message span:before {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message span:before {
   content: " ";
   width: 2px;
   background: linear-gradient(0deg, var(--grad-2) 0%, var(--grad-1) 100%);
@@ -335,7 +338,7 @@ h2 {
   left: -30px;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message .individual-project h2 {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message .individual-project h2 {
   margin-top: 60px;
   margin-bottom: 30px;
   font-family: Montserrat-Regular;
@@ -343,7 +346,7 @@ h2 {
   font-weight: 100;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div {
   z-index: 1;
   background: #1d1d20;
   border-top-left-radius: 7px;
@@ -365,7 +368,7 @@ a {
   display: flex;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message #welcome svg {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message #welcome svg {
   width: 75%;
   fill: #fff0;
 }
@@ -391,14 +394,14 @@ button {
   -webkit-appearance: button;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message .individual-project button {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message .individual-project button {
   border: 0 solid #000;
   margin-right: 25px;
   padding: 0;
   position: relative;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div a {
   color: #ccc;
   margin-bottom: 15px;
   margin-left: 0;
@@ -407,10 +410,10 @@ button {
   text-decoration: none;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div a {
   transition: all 0.8s;
 }
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a:hover {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div a:hover {
   color: #ffffff;
   letter-spacing: 1px;
   padding: 2px 0 2px 5px;
@@ -446,7 +449,7 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message .individual-project button a {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message .individual-project button a {
   text-align: center;
   color: #ccc;
   background: #1d1d20;
@@ -460,7 +463,7 @@ button {
   display: block;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message .individual-project button a:after {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message .individual-project button a:after {
   content: "";
   height: 2px;
   width: 100%;
@@ -474,21 +477,21 @@ button {
   right: 0;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message .individual-project button a:hover {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message .individual-project button a:hover {
   color: #fff;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-message .individual-project button a:hover:after {
+.main-container .main-container-inner .inner-container section.projects-overview .main-message .individual-project button a:hover:after {
   background: linear-gradient(270deg, var(--grad-1) 0%, var(--grad-2) 100%);
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a span {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div a span {
   transition: all 0.3s ease-in-out;
   display: inline-block;
   position: relative;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a span:before {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div a span:before {
   content: "";
   height: 1px;
   width: 100%;
@@ -502,7 +505,7 @@ button {
   right: 0;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a span:after {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div a span:after {
   content: "";
   height: 1px;
   width: 100%;
@@ -516,11 +519,11 @@ button {
   right: 0;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a:hover span:before {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div a:hover span:before {
   opacity: 0;
 }
 
-.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a:hover span:after {
+.main-container .main-container-inner .inner-container section.projects-overview .main-projects div.project-wrapper div a:hover span:after {
   opacity: 1;
 }
 
@@ -564,7 +567,7 @@ button {
 
 /* ===================== Blinking cursor animation =================*/
 .nameWrapper h1 {
-  display: flex;
+  display: inline;
   align-items: center;
   gap: 2px;
   margin: 6px 0 12px 0;
