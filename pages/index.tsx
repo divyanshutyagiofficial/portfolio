@@ -2,51 +2,49 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Counter from "../components/counter";
 import styles from "../styles/Home.module.css";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [currentSectionIndex, setCurrentSectionIndex] = useState<any | null>(0);
+
+  const handleAutomaticScroll = (e: any) => {
+    const target: any = document.querySelectorAll('section')[currentSectionIndex];
+    if (e.deltaY < 0) {
+      // The user is scrolling down.
+      if (target && target.previousElementSibling) {
+        target.previousElementSibling.scrollIntoView();
+      }
+    } else if (e.deltaY > 0) {
+      // The user is scrolling up.
+      if (target && target.nextElementSibling) {
+        target.nextElementSibling.scrollIntoView();
+      }
+    }
+  }
+
+  useEffect(() => {
+    const parentElm = document.getElementById('inner-container');
+    window.addEventListener("wheel", e => {
+      e.preventDefault();
+      handleAutomaticScroll(e);
+    }, { passive: false });
+    if (parentElm) {
+      parentElm.onwheel = function () { return false; }
+    }
+  }, []);
+
   return (
     <main className={styles.main}>
       <div className="main">
         <div className="main-container">
           <div id="main-container-inner" className="main-container-inner">
-         
-            <div className="inner-container">
+
+            <div id="inner-container" className="inner-container">
               <header>
                 <div className="logo" id="color-click">
                   {" "}
-                  <svg
-                    id="Layer_1"
-                    data-name="Layer 1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 259.23 343.78"
-                    data-inlinesvg=".inlineSvgFile-1"
-                  >
-                    <defs>
-                      <style
-                        dangerouslySetInnerHTML={{
-                          __html:
-                            "\n                                    .cls-1 {\n                                        fill: #777\n                                    }\n\n                                    .cls-2 {\n                                        fill: #ccc\n                                    }\n                                ",
-                        }}
-                      />
-                    </defs>
-                    <path
-                      className="cls-1"
-                      d="M915 419.1c22.75 1.32 45.5 2.69 68.26 3.89 3.74.2 2.67 2.69 2.67 4.59q.09 39 0 78c0 8.65 0 8.58 8.53 7.83 7-.61 13.93-1.14 20.91-1.49a27.35 27.35 0 0 0 19.27-9.14c19-20.15 18.24-63.83-1.61-83.18a22.94 22.94 0 0 0-15-7c-7-.4-13.94-1-20.92-1.29-2.16-.1-3.22-.37-3.21-3 .08-33.13.06-66.27.06-98.74 37.75.43 63.34 19.89 80.84 51.71 15.54 28.26 22.68 58.83 24 90.8 1.44 35.39-3.86 69.7-18.92 102-9.71 20.87-22.75 39.08-43.44 50.66-10.09 5.65-21.42 7-32.41 9.46q-43.26 9.86-86.57 19.52a11.85 11.85 0 0 1-2.46.07V419.1Z"
-                      transform="translate(-839.8 -290.1)"
-                    />
-                    <path
-                      className="cls-2"
-                      d="M915 419.1v214.75q-26.28-5.64-52.56-11.3c-6.16-1.33-12.28-2.92-18.48-4-3.28-.58-4.17-1.95-4.15-5.23.14-27.45.08-54.91.08-82.36 0-34.44.06-68.88-.09-103.31 0-3.6.86-4.85 4.55-5 23.56-1.03 47.07-3.12 70.65-3.55ZM915 404.67c-23.69 1.79-47.39 3.53-71.07 5.44-3.43.28-4.14-.88-4.13-4.06.1-31.94 0-63.88.06-95.82 0-2-.34-3.71 2.64-4.35 23.85-5.14 47.65-10.49 71.48-15.76a3.34 3.34 0 0 1 1 .06Z"
-                      transform="translate(-839.8 -290.1)"
-                    />
-                    <path
-                      className="cls-1"
-                      d="M915 404.67V290.18c13.94 2.27 27.49 6.28 41.27 9.27 8.76 1.9 17.43 4.27 26.21 6.11 2.93.61 3.57 1.85 3.56 4.63q-.15 48.22 0 96.44c0 3.16-.81 3.88-3.89 3.61-22.36-1.95-44.74-3.73-67.15-5.57Z"
-                      transform="translate(-839.8 -290.1)"
-                    />
-                  </svg>{" "}
                 </div>
                 <div>
                   <ul>
@@ -154,12 +152,13 @@ export default function Home() {
                       <h1 className="name highlight">Divyanshu Tyagi</h1>
                     </div>{" "}
                     <span id="introduction">
-                      I am a seasoned Full-Stack Developer with over 6+ years of
+                      I am a seasoned Full-Stack Developer with over {new Date().getFullYear() - 2017}+ years of
                       experience. I&apos;ve worked on a wide range of projects,
                       from dynamic{" "}
                       <p className="highlight">real-time chat applications</p>{" "}
                       to intricate{" "}
-                      <p className="highlight">e-commerce platforms </p>
+                      <p className="highlight">e-commerce platforms </p> and specifically 
+                      <p className="highlight"> Blockchain domain </p>
                       . I&apos;m always up for a challenge, and I love to learn
                       new technologies. I&apos;m passionate about creating
                       pixel-perfect, visually stunning interfaces that are also
@@ -187,11 +186,35 @@ export default function Home() {
                 <div className="spacer" />
                 <div className="main-projects">
                   <h2>
-                    Projects
+                    My Top Projects
                     {/* {"  -  "}{" "} <span> <Counter /> <span className={styles.shyText}>and counting...</span></span>*/}
                   </h2>
                   <div className="project-wrapper">
                     <div>
+                      <a
+                        rel="noopener"
+                        target="_blank"
+                        href="https://shibasea-mainnet.shibinternal.com/"
+                      >
+                        {" "}
+                        <span>Shiba Inu - Shib Marketplace Web App</span>
+                      </a>
+                      <a
+                        rel="noopener"
+                        target="_blank"
+                        href="https://www.shib.io"
+                      >
+                        {" "}
+                        <span>Shiba Inu - Shib Web App</span>
+                      </a>
+                      <a
+                        rel="noopener"
+                        target="_blank"
+                        href="https://shibarium.shib.io"
+                      >
+                        {" "}
+                        <span>Shiba Inu - Shibarium Web App</span>
+                      </a>
                       <a
                         rel="noopener"
                         target="_blank"
@@ -236,13 +259,6 @@ export default function Home() {
                       <a
                         rel="noopener"
                         target="_blank"
-                        href="https://pals.carematix.com"
-                      >
-                        <span>PALS </span>{" "}
-                      </a>{" "}
-                      <a
-                        rel="noopener"
-                        target="_blank"
                         href="https://www.reliefhhs.com"
                       >
                         {" "}
@@ -259,6 +275,291 @@ export default function Home() {
                   </div>
                 </div>
               </section>
+{/* 
+              <section style={{ paddingTop: "100px" }}>
+                <div>
+                  <form style={{ width: "100%", maxWidth: "28rem" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", marginBottom: "1.5rem" }}>
+                      <div
+                        style={{
+                          width: "100%",
+                          paddingRight: "0.75rem",
+                          paddingLeft: "0.75rem",
+                          marginBottom: "1.5rem"
+                        }}
+                      >
+                        <label
+                          style={{
+                            display: "block",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
+                            color: "#4a5568",
+                            fontSize: "0.75rem",
+                            fontWeight: 700,
+                            marginBottom: "0.5rem"
+                          }}
+                          htmlFor="grid-first-name"
+                        >
+                          First Name
+                        </label>
+                        <input
+                          style={{
+                            appearance: "none",
+                            width: "100%",
+                            backgroundColor: "#edf2f7",
+                            color: "#4a5568",
+                            border: "1px solid #fc8181",
+                            borderRadius: "0.25rem",
+                            paddingTop: "0.75rem",
+                            paddingBottom: "0.75rem",
+                            paddingLeft: "1rem",
+                            paddingRight: "1rem",
+                            lineHeight: "1.25",
+                            outline: "none"
+                          }}
+                          id="grid-first-name"
+                          type="text"
+                          placeholder="Jane"
+                        />
+                        <p
+                          style={{ color: "#fc8181", fontSize: "0.625rem" }}
+                        >
+                          Please fill out this field.
+                        </p>
+                      </div>
+                      <div
+                        style={{ width: "100%", paddingRight: "0.75rem", paddingLeft: "0.75rem" }}
+                      >
+                        <label
+                          style={{
+                            display: "block",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
+                            color: "#4a5568",
+                            fontSize: "0.75rem",
+                            fontWeight: 700,
+                            marginBottom: "0.5rem"
+                          }}
+                          htmlFor="grid-last-name"
+                        >
+                          Last Name
+                        </label>
+                        <input
+                          style={{
+                            appearance: "none",
+                            width: "100%",
+                            backgroundColor: "#edf2f7",
+                            color: "#4a5568",
+                            border: "1px solid #edf2f7",
+                            borderRadius: "0.25rem",
+                            paddingTop: "0.75rem",
+                            paddingBottom: "0.75rem",
+                            paddingLeft: "1rem",
+                            paddingRight: "1rem",
+                            lineHeight: "1.25",
+                            outline: "none"
+                          }}
+                          id="grid-last-name"
+                          type="text"
+                          placeholder="Doe"
+                        />
+                      </div>
+                    </div>
+                    <div style={{ display: "flex", flexWrap: "wrap", marginBottom: "1.5rem" }}>
+                      <div
+                        style={{ width: "100%", paddingRight: "0.75rem", paddingLeft: "0.75rem" }}
+                      >
+                        <label
+                          style={{
+                            display: "block",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
+                            color: "#4a5568",
+                            fontSize: "0.75rem",
+                            fontWeight: 700,
+                            marginBottom: "0.5rem"
+                          }}
+                          htmlFor="grid-password"
+                        >
+                          Password
+                        </label>
+                        <input
+                          style={{
+                            appearance: "none",
+                            width: "100%",
+                            backgroundColor: "#edf2f7",
+                            color: "#4a5568",
+                            border: "1px solid #edf2f7",
+                            borderRadius: "0.25rem",
+                            paddingTop: "0.75rem",
+                            paddingBottom: "0.75rem",
+                            paddingLeft: "1rem",
+                            paddingRight: "1rem",
+                            lineHeight: "1.25",
+                            outline: "none"
+                          }}
+                          id="grid-password"
+                          type="password"
+                          placeholder="******************"
+                        />
+                        <p
+                          style={{ color: "#4a5568", fontSize: "0.625rem" }}
+                        >
+                          Make it as long and as crazy as you'd like
+                        </p>
+                      </div>
+                    </div>
+                    <div style={{ display: "flex", flexWrap: "wrap" }}>
+                      <div
+                        style={{
+                          width: "100%",
+                          paddingRight: "0.75rem",
+                          paddingLeft: "0.75rem",
+                          marginBottom: "1rem"
+                        }}
+                      >
+                        <label
+                          style={{
+                            display: "block",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
+                            color: "#4a5568",
+                            fontSize: "0.75rem",
+                            fontWeight: 700,
+                            marginBottom: "0.5rem"
+                          }}
+                          htmlFor="grid-city"
+                        >
+                          City
+                        </label>
+                        <input
+                          style={{
+                            appearance: "none",
+                            width: "100%",
+                            backgroundColor: "#edf2f7",
+                            color: "#4a5568",
+                            border: "1px solid #edf2f7",
+                            borderRadius: "0.25rem",
+                            paddingTop: "0.75rem",
+                            paddingBottom: "0.75rem",
+                            paddingLeft: "1rem",
+                            paddingRight: "1rem",
+                            lineHeight: "1.25",
+                            outline: "none"
+                          }}
+                          id="grid-city"
+                          type="text"
+                          placeholder="Albuquerque"
+                        />
+                      </div>
+                      <div
+                        style={{
+                          width: "100%",
+                          paddingRight: "0.75rem",
+                          paddingLeft: "0.75rem",
+                          marginBottom: "1rem"
+                        }}
+                      >
+                        <label
+                          style={{
+                            display: "block",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
+                            color: "#4a5568",
+                            fontSize: "0.75rem",
+                            fontWeight: 700,
+                            marginBottom: "0.5rem"
+                          }}
+                          htmlFor="grid-state"
+                        >
+                          State
+                        </label>
+                        <div style={{ position: "relative" }}>
+                          <select
+                            style={{
+                              appearance: "none",
+                              width: "100%",
+                              backgroundColor: "#edf2f7",
+                              color: "#4a5568",
+                              border: "1px solid #edf2f7",
+                              borderRadius: "0.25rem",
+                              paddingTop: "0.75rem",
+                              paddingBottom: "0.75rem",
+                              paddingLeft: "1rem",
+                              paddingRight: "2rem",
+                              lineHeight: "1.25",
+                              outline: "none"
+                            }}
+                            id="grid-state"
+                          >
+                            <option>New Mexico</option>
+                            <option>Missouri</option>
+                            <option>Texas</option>
+                          </select>
+                          <div
+                            style={{
+                              pointerEvents: "none",
+                              position: "absolute",
+                              top: 0,
+                              right: 0,
+                              display: "flex",
+                              items: "center",
+                              paddingLeft: "0.5rem",
+                              color: "#4a5568"
+                            } as any}
+                          >
+                            <svg
+                              style={{ fill: "currentColor", height: "1rem", width: "1rem" }}
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                            >
+                              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        style={{ width: "100%", paddingRight: "0.75rem", paddingLeft: "0.75rem" }}
+                      >
+                        <label
+                          style={{
+                            display: "block",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
+                            color: "#4a5568",
+                            fontSize: "0.75rem",
+                            fontWeight: 700,
+                            marginBottom: "0.5rem"
+                          }}
+                          htmlFor="grid-zip"
+                        >
+                          Zip
+                        </label>
+                        <input
+                          style={{
+                            appearance: "none",
+                            width: "100%",
+                            backgroundColor: "#edf2f7",
+                            color: "#4a5568",
+                            border: "1px solid #edf2f7",
+                            borderRadius: "0.25rem",
+                            paddingTop: "0.75rem",
+                            paddingBottom: "0.75rem",
+                            paddingLeft: "1rem",
+                            paddingRight: "1rem",
+                            lineHeight: "1.25",
+                            outline: "none"
+                          }}
+                          id="grid-zip"
+                          type="text"
+                          placeholder={90210}
+                        />
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </section> */}
               <footer>
                 © {new Date().getFullYear()} divyanshutyagiofficial.com
               </footer>
