@@ -1,10 +1,47 @@
-import Image from "next/image";
+
 import { Inter } from "@next/font/google";
-import Counter from "../components/counter";
 import styles from "../styles/Home.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Typewriter from "../components/TypewriterHeading";
+import SlowdownCounter from "../components/SlowdownCounter";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const DShapeProfile = () => {
+  return (
+    <span className="">
+      <div
+        className="w-[200px] h-[200px] flex items-center justify-center"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23D9D9D9FF' stroke-width='7' stroke-dasharray='50%25%2c 13%25' stroke-dashoffset='86' stroke-linecap='butt'/%3e%3c/svg%3e")`,
+          borderRadius: "100px",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <span className="bg-[radial-gradient(circle,#ff7b64,#ffb02c)] overflow-auto rounded-full block w-36 h-36 relative">
+          {/* Left Side Curve */}
+          {/* <span className="w-[82px] h-[162px] block absolute bg-black rounded-l-[109px] right-[135px]"></span> */}
+          {/* Profile Image */}
+          <img
+            alt="Profile Picture"
+            loading="lazy"
+            width="500"
+            height="500"
+            decoding="async"
+            data-nimg="1"
+            className="w-full h-full object-contain absolute"
+            srcSet="/_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=1080&amp;q=75 2x"
+            src="/_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=1080&amp;q=75"
+          />
+          {/* 
+        <span className="w-[82px] h-[162px] block absolute bg-black rounded-r-[109px] left-[135px]"></span> */}
+        </span>
+      </div>
+    </span>
+  );
+}
+
 
 export default function Home() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState<any | null>(0);
@@ -16,7 +53,7 @@ export default function Home() {
           <div id="main-container-inner" className="main-container-inner">
 
             <div id="inner-container" className="inner-container">
-              <header>
+              <header className="relative top-4">
                 <div className="logo" id="color-click">
                   {" "}
                 </div>
@@ -35,7 +72,7 @@ export default function Home() {
                           width="857.333"
                           height={620}
                           viewBox="0 0 643 465"
-                          style={{filter: "sepia(100)"}}
+                          style={{ filter: "sepia(100)" }}
 
                         >
                           <path d="M39 3.4C31.6 5.1 27.5 7 21.4 11.6 11.2 19.3 5 29.2 3 41.1c-.8 4.5-1 61.4-.8 195.9.3 185.8.3 189.6 2.3 195 4.5 12.6 15.8 24.2 28.2 29.1 5 1.9 8.2 2.3 23.1 2.7l17.2.4V292.6c0-94.4.3-171.6.6-171.6.4 0 56.5 39.8 124.6 88.5l124 88.6 123.6-88.3c67.9-48.6 123.9-88.5 124.4-88.6.4-.2.8 76.8.8 171.2V464h15.3c16.2 0 21.9-1 30.3-5.1 11.3-5.6 21.7-19.2 24.3-31.7.8-3.8 1.1-59.8 1.1-194.5 0-166.8-.2-190-1.5-195.2-4.7-17.7-19.3-31.2-37.6-34.6-5.4-1-7-.9-9.2.2-1.4.8-62.9 44.7-136.6 97.6-73.7 53-134.5 96.3-135 96.3-.6 0-60.8-42.8-133.8-95.2C115.2 49.4 54 5.6 52.1 4.3c-3.8-2.6-5.2-2.7-13.1-.9z"></path>
@@ -52,7 +89,7 @@ export default function Home() {
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 120.78 117.79"
-                          style={{filter: "invert(0.6)"}}
+                          style={{ filter: "invert(0.6)" }}
                         >
                           <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
@@ -82,7 +119,7 @@ export default function Home() {
                           height={26}
                           viewBox="0 0 256 256"
                           xmlSpace="preserve"
-                          style={{filter: "sepia(100)"}}
+                          style={{ filter: "sepia(100)" }}
 
                         >
                           <defs></defs>
@@ -123,17 +160,32 @@ export default function Home() {
                   </ul>
                 </div>
               </header>
+
+              <div>
+                <div className=" flex items-center gap-x-4">
+
+                  <div className="lg:px-10">
+                    <DShapeProfile />
+                  </div>
+
+                  <div>
+                    <div>Hi, My name is</div>
+                    {/* <h1 className="name highlight block mb-2">Divyanshu Tyagi</h1>
+                    <span className="ml-1 w-2 h-6 bg-black animate-blink"></span> */}
+                    <Typewriter text="DDivyanshu Tyagi" />
+                  </div>
+                </div>{" "}
+              </div>
+
               <section className="projects-overview">
                 <div className="main-message">
                   <div className="welcome-message">
-                    <div className="nameWrapper">
-                      <div>Hi, My name is</div>
-                      <h1 className="name highlight">Divyanshu Tyagi</h1>
-                    </div>{" "}
+
+
                     <span id="introduction">
-                      I am a seasoned Full-Stack Developer with over {new Date().getFullYear() - 2017}+ years of experience.
-                      I&apos;ve successfully built <strong>17+ projects from scratch</strong> across <strong>Web3, DeFi, FinTech, Healthcare and enterprise applications</strong>.
-                      I&apos;ve worked on a wide range of projects, from dynamic
+                      I am a seasoned Full-Stack Developer with over <SlowdownCounter start={0} end={(new Date().getFullYear() - 2017)} duration={3000} />+ years of experience.
+                      I&apos;ve successfully built <strong><SlowdownCounter start={0} end={17} duration={3000} /> + projects from scratch</strong> across <strong>Web3, DeFi, FinTech, Healthcare and enterprise applications</strong>.
+                      I&apos;ve worked on a wide range of projects, from dynamic {" "}
                       <p className="highlight">real-time chat applications{" "}</p>
                       to intricate
                       <p className="highlight">{" "}e-commerce platforms</p> and specifically
@@ -144,15 +196,15 @@ export default function Home() {
                       that are both <strong>visually stunning</strong> and <strong>intuitive</strong>.
 
                       <br /><br />
-                      My expertise spans <strong>ReactJS, NextJS, Angular, NodeJS, Express, MongoDB, and Web3 tools</strong>
+                      My expertise spans <strong>ReactJS, NextJS, Angular, NodeJS, Express, MongoDB, and Web3 tools{" "}</strong>
                       like <strong>ethers.js, web3.js, WalletConnect, and Wagmi</strong>.
-                      I have experience in <strong>NFT marketplaces</strong>, <strong>DeFi applications</strong>, and <strong>real-time systems</strong>
+                      I have experience in <strong>NFT marketplaces</strong>, <strong>DeFi applications</strong>, and <strong>real-time systems {" "}</strong>
                       using <strong>Socket.IO and WebSockets</strong>.
 
                       <br /><br />
                       I also ensure <strong>compliance-driven development</strong>, working with standards like
-                      <p className="highlight">{" "}PCI</p>, <p className="highlight">HIPAA</p>,
-                      and focusing on <strong>security, accessibility</strong>, and <strong>performance</strong> optimizations.
+                      <p className="highlight">{" "}PCI</p>, <p className="highlight">HIPAA</p>, <p className="highlight">WCAG / WCAG2</p>,
+                      and focusing on NFRs like <strong>security</strong>, maintainability, compatibility, and <strong>performance</strong> optimizations.
 
                       <br /><br />
                       If you&apos;re looking for an <strong>experienced Full-Stack Developer</strong>,

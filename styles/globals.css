@@ -65,7 +65,7 @@ html {
     height: 100vh;
     max-height: 100vh;
     align-items: center;
-    overflow: hidden;
+   
   }
 }
 
@@ -102,7 +102,7 @@ html {
   flex-wrap: wrap;
   flex-basis: 100%;
   padding: 15px;
-  overflow: hidden;
+  
 }
 
 @media screen and (min-width: 500px) {
