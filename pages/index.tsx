@@ -61,6 +61,8 @@ export default function Home() {
                           width="857.333"
                           height={620}
                           viewBox="0 0 643 465"
+                          style={{filter: "sepia(100)"}}
+
                         >
                           <path d="M39 3.4C31.6 5.1 27.5 7 21.4 11.6 11.2 19.3 5 29.2 3 41.1c-.8 4.5-1 61.4-.8 195.9.3 185.8.3 189.6 2.3 195 4.5 12.6 15.8 24.2 28.2 29.1 5 1.9 8.2 2.3 23.1 2.7l17.2.4V292.6c0-94.4.3-171.6.6-171.6.4 0 56.5 39.8 124.6 88.5l124 88.6 123.6-88.3c67.9-48.6 123.9-88.5 124.4-88.6.4-.2.8 76.8.8 171.2V464h15.3c16.2 0 21.9-1 30.3-5.1 11.3-5.6 21.7-19.2 24.3-31.7.8-3.8 1.1-59.8 1.1-194.5 0-166.8-.2-190-1.5-195.2-4.7-17.7-19.3-31.2-37.6-34.6-5.4-1-7-.9-9.2.2-1.4.8-62.9 44.7-136.6 97.6-73.7 53-134.5 96.3-135 96.3-.6 0-60.8-42.8-133.8-95.2C115.2 49.4 54 5.6 52.1 4.3c-3.8-2.6-5.2-2.7-13.1-.9z"></path>
                         </svg>
@@ -71,11 +73,12 @@ export default function Home() {
                       <a
                         aria-label="github"
                         data-inlinesvg=".inlineSvgFile-2"
-                        href="https://github.com/dvynshu95"
+                        href="https://github.com/divyanshutyagiofficial"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 120.78 117.79"
+                          style={{filter: "invert(0.6)"}}
                         >
                           <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
@@ -105,6 +108,8 @@ export default function Home() {
                           height={26}
                           viewBox="0 0 256 256"
                           xmlSpace="preserve"
+                          style={{filter: "sepia(100)"}}
+
                         >
                           <defs></defs>
                           <g
@@ -152,35 +157,39 @@ export default function Home() {
                       <h1 className="name highlight">Divyanshu Tyagi</h1>
                     </div>{" "}
                     <span id="introduction">
-                      I am a seasoned Full-Stack Developer with over {new Date().getFullYear() - 2017}+ years of
-                      experience. I&apos;ve worked on a wide range of projects,
-                      from dynamic{" "}
-                      <p className="highlight">real-time chat applications</p>{" "}
-                      to intricate{" "}
-                      <p className="highlight">e-commerce platforms </p> and specifically 
-                      <p className="highlight"> Blockchain domain </p>
-                      . I&apos;m always up for a challenge, and I love to learn
-                      new technologies. I&apos;m passionate about creating
-                      pixel-perfect, visually stunning interfaces that are also
-                      intuitive and user-friendly. I believe that great design
-                      is essential for any successful product. I&apos;m also a
-                      meticulous developer who takes the time to understand your
-                      needs and deliver a high-quality product. I&apos;m always
-                      available to answer questions and provide support.
-                      <br /> <br />I have expertise in working with cross-domain
-                      compliances like <p className="highlight">PCI</p>,{" "}
-                      <p className="highlight">HIPPA</p>, and experience in
-                      achieving the non-functional requirements like{" "}
-                      <p className="highlight">security, accessibility</p>, and
-                      other things which are equally required in a web app. If
-                      you&apos;re looking for a dedicated and experienced
-                      Full-Stack Developer, I&apos;d love to hear from you.
-                      Let&apos;s talk about how we can transform your vision
-                      into reality.
-                      <br /> <br />
-                      <strong className="highlight">Check out!</strong> some of
-                      the best Projects I&apos;ve worked on!
+                      I am a seasoned Full-Stack Developer with over {new Date().getFullYear() - 2017}+ years of experience.
+                      I&apos;ve successfully built <strong>17+ projects from scratch</strong> across <strong>Web3, DeFi, FinTech, Healthcare and enterprise applications</strong>.
+                      I&apos;ve worked on a wide range of projects, from dynamic
+                      <p className="highlight">real-time chat applications</p>
+                      to intricate
+                      <p className="highlight">e-commerce platforms</p> and specifically
+                      <p className="highlight">Blockchain-based applications</p>.
+
+                      I&apos;m always up for a challenge and love learning new technologies.
+                      I&apos;m passionate about creating <strong>high-performance</strong> and <strong>accessible</strong> interfaces
+                      that are both <strong>visually stunning</strong> and <strong>intuitive</strong>.
+
+                      <br /><br />
+                      My expertise spans <strong>ReactJS, NextJS, Angular, NodeJS, Express, MongoDB, and Web3 tools</strong>
+                      like <strong>ethers.js, web3.js, WalletConnect, and Wagmi</strong>.
+                      I have experience in <strong>NFT marketplaces</strong>, <strong>DeFi applications</strong>, and <strong>real-time systems</strong>
+                      using <strong>Socket.IO and WebSockets</strong>.
+
+                      <br /><br />
+                      I also ensure <strong>compliance-driven development</strong>, working with standards like
+                      <p className="highlight">{" "}PCI</p>, <p className="highlight">HIPAA</p>,
+                      and focusing on <strong>security, accessibility</strong>, and <strong>performance</strong> optimizations.
+
+                      <br /><br />
+                      If you&apos;re looking for an <strong>experienced Full-Stack Developer</strong>,
+                      I&apos;d love to hear from you. Let&apos;s turn your ideas into reality.
+
+                      <br /><br />
+                      <strong className="highlight">Check out!</strong> some of the best <strong>Projects</strong> I&apos;ve worked on!
                     </span>
+
+
+
                   </div>
                 </div>
                 <div className="spacer" />
@@ -197,23 +206,7 @@ export default function Home() {
                         href="https://shibasea-mainnet.shibinternal.com/"
                       >
                         {" "}
-                        <span>Shiba Inu - Shib Marketplace Web App</span>
-                      </a>
-                      <a
-                        rel="noopener"
-                        target="_blank"
-                        href="https://www.shib.io"
-                      >
-                        {" "}
-                        <span>Shiba Inu - Shib Web App</span>
-                      </a>
-                      <a
-                        rel="noopener"
-                        target="_blank"
-                        href="https://shibarium.shib.io"
-                      >
-                        {" "}
-                        <span>Shiba Inu - Shibarium Web App</span>
+                        <span>MetaMint - NFT Marketplace App</span>
                       </a>
                       <a
                         rel="noopener"
@@ -239,15 +232,7 @@ export default function Home() {
                         {" "}
                         <span>Incedo Pay B2B Client portal</span>
                       </a>{" "}
-                      <a
-                        rel="noopener"
-                        target="_blank"
-                        // href="https://www.pickndplay.com/song/queries?Id=XXYlFuWEuKI"
-                        href="https://www.pickndplay.com"
-                      >
-                        {" "}
-                        <span> Pick n &apos; play </span>
-                      </a>{" "}
+
                       <a
                         rel="noopener"
                         target="_blank"
@@ -264,6 +249,7 @@ export default function Home() {
                         {" "}
                         <span> ReliefHHS </span>{" "}
                       </a>{" "}
+
                       <a
                         rel="noopener"
                         target="_blank"
@@ -271,327 +257,22 @@ export default function Home() {
                       >
                         <span>DRO </span>{" "}
                       </a>{" "}
+
+                      <a
+                        rel="noopener"
+                        target="_blank"
+                        // href="https://www.pickndplay.com/song/queries?Id=XXYlFuWEuKI"
+                        href="https://www.pickndplay.com"
+                      >
+                        {" "}
+                        <span> Pick n &apos; play </span>
+                      </a>{" "}
+
                     </div>
                   </div>
                 </div>
               </section>
-{/* 
-              <section style={{ paddingTop: "100px" }}>
-                <div>
-                  <form style={{ width: "100%", maxWidth: "28rem" }}>
-                    <div style={{ display: "flex", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-                      <div
-                        style={{
-                          width: "100%",
-                          paddingRight: "0.75rem",
-                          paddingLeft: "0.75rem",
-                          marginBottom: "1.5rem"
-                        }}
-                      >
-                        <label
-                          style={{
-                            display: "block",
-                            textTransform: "uppercase",
-                            letterSpacing: "0.05em",
-                            color: "#4a5568",
-                            fontSize: "0.75rem",
-                            fontWeight: 700,
-                            marginBottom: "0.5rem"
-                          }}
-                          htmlFor="grid-first-name"
-                        >
-                          First Name
-                        </label>
-                        <input
-                          style={{
-                            appearance: "none",
-                            width: "100%",
-                            backgroundColor: "#edf2f7",
-                            color: "#4a5568",
-                            border: "1px solid #fc8181",
-                            borderRadius: "0.25rem",
-                            paddingTop: "0.75rem",
-                            paddingBottom: "0.75rem",
-                            paddingLeft: "1rem",
-                            paddingRight: "1rem",
-                            lineHeight: "1.25",
-                            outline: "none"
-                          }}
-                          id="grid-first-name"
-                          type="text"
-                          placeholder="Jane"
-                        />
-                        <p
-                          style={{ color: "#fc8181", fontSize: "0.625rem" }}
-                        >
-                          Please fill out this field.
-                        </p>
-                      </div>
-                      <div
-                        style={{ width: "100%", paddingRight: "0.75rem", paddingLeft: "0.75rem" }}
-                      >
-                        <label
-                          style={{
-                            display: "block",
-                            textTransform: "uppercase",
-                            letterSpacing: "0.05em",
-                            color: "#4a5568",
-                            fontSize: "0.75rem",
-                            fontWeight: 700,
-                            marginBottom: "0.5rem"
-                          }}
-                          htmlFor="grid-last-name"
-                        >
-                          Last Name
-                        </label>
-                        <input
-                          style={{
-                            appearance: "none",
-                            width: "100%",
-                            backgroundColor: "#edf2f7",
-                            color: "#4a5568",
-                            border: "1px solid #edf2f7",
-                            borderRadius: "0.25rem",
-                            paddingTop: "0.75rem",
-                            paddingBottom: "0.75rem",
-                            paddingLeft: "1rem",
-                            paddingRight: "1rem",
-                            lineHeight: "1.25",
-                            outline: "none"
-                          }}
-                          id="grid-last-name"
-                          type="text"
-                          placeholder="Doe"
-                        />
-                      </div>
-                    </div>
-                    <div style={{ display: "flex", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-                      <div
-                        style={{ width: "100%", paddingRight: "0.75rem", paddingLeft: "0.75rem" }}
-                      >
-                        <label
-                          style={{
-                            display: "block",
-                            textTransform: "uppercase",
-                            letterSpacing: "0.05em",
-                            color: "#4a5568",
-                            fontSize: "0.75rem",
-                            fontWeight: 700,
-                            marginBottom: "0.5rem"
-                          }}
-                          htmlFor="grid-password"
-                        >
-                          Password
-                        </label>
-                        <input
-                          style={{
-                            appearance: "none",
-                            width: "100%",
-                            backgroundColor: "#edf2f7",
-                            color: "#4a5568",
-                            border: "1px solid #edf2f7",
-                            borderRadius: "0.25rem",
-                            paddingTop: "0.75rem",
-                            paddingBottom: "0.75rem",
-                            paddingLeft: "1rem",
-                            paddingRight: "1rem",
-                            lineHeight: "1.25",
-                            outline: "none"
-                          }}
-                          id="grid-password"
-                          type="password"
-                          placeholder="******************"
-                        />
-                        <p
-                          style={{ color: "#4a5568", fontSize: "0.625rem" }}
-                        >
-                          Make it as long and as crazy as you'd like
-                        </p>
-                      </div>
-                    </div>
-                    <div style={{ display: "flex", flexWrap: "wrap" }}>
-                      <div
-                        style={{
-                          width: "100%",
-                          paddingRight: "0.75rem",
-                          paddingLeft: "0.75rem",
-                          marginBottom: "1rem"
-                        }}
-                      >
-                        <label
-                          style={{
-                            display: "block",
-                            textTransform: "uppercase",
-                            letterSpacing: "0.05em",
-                            color: "#4a5568",
-                            fontSize: "0.75rem",
-                            fontWeight: 700,
-                            marginBottom: "0.5rem"
-                          }}
-                          htmlFor="grid-city"
-                        >
-                          City
-                        </label>
-                        <input
-                          style={{
-                            appearance: "none",
-                            width: "100%",
-                            backgroundColor: "#edf2f7",
-                            color: "#4a5568",
-                            border: "1px solid #edf2f7",
-                            borderRadius: "0.25rem",
-                            paddingTop: "0.75rem",
-                            paddingBottom: "0.75rem",
-                            paddingLeft: "1rem",
-                            paddingRight: "1rem",
-                            lineHeight: "1.25",
-                            outline: "none"
-                          }}
-                          id="grid-city"
-                          type="text"
-                          placeholder="Albuquerque"
-                        />
-                      </div>
-                      <div
-                        style={{
-                          width: "100%",
-                          paddingRight: "0.75rem",
-                          paddingLeft: "0.75rem",
-                          marginBottom: "1rem"
-                        }}
-                      >
-                        <label
-                          style={{
-                            display: "block",
-                            textTransform: "uppercase",
-                            letterSpacing: "0.05em",
-                            color: "#4a5568",
-                            fontSize: "0.75rem",
-                            fontWeight: 700,
-                            marginBottom: "0.5rem"
-                          }}
-                          htmlFor="grid-state"
-                        >
-                          State
-                        </label>
-                        <div style={{ position: "relative" }}>
-                          <select
-                            style={{
-                              appearance: "none",
-                              width: "100%",
-                              backgroundColor: "#edf2f7",
-                              color: "#4a5568",
-                              border: "1px solid #edf2f7",
-                              borderRadius: "0.25rem",
-                              paddingTop: "0.75rem",
-                              paddingBottom: "0.75rem",
-                              paddingLeft: "1rem",
-                              paddingRight: "2rem",
-                              lineHeight: "1.25",
-                              outline: "none"
-                            }}
-                            id="grid-state"
-                          >
-                            <option>New Mexico</option>
-                            <option>Missouri</option>
-                            <option>Texas</option>
-                          </select>
-                          <div
-                            style={{
-                              pointerEvents: "none",
-                              position: "absolute",
-                              top: 0,
-                              right: 0,
-                              display: "flex",
-                              items: "center",
-                              paddingLeft: "0.5rem",
-                              color: "#4a5568"
-                            } as any}
-                          >
-                            <svg
-                              style={{ fill: "currentColor", height: "1rem", width: "1rem" }}
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                            >
-                              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        style={{ width: "100%", paddingRight: "0.75rem", paddingLeft: "0.75rem" }}
-                      >
-                        <label
-                          style={{
-                            display: "block",
-                            textTransform: "uppercase",
-                            letterSpacing: "0.05em",
-                            color: "#4a5568",
-                            fontSize: "0.75rem",
-                            fontWeight: 700,
-                            marginBottom: "0.5rem"
-                          }}
-                          htmlFor="grid-zip"
-                        >
-                          Zip
-                        </label>
-                        <input
-                          style={{
-                            appearance: "none",
-                            width: "100%",
-                            backgroundColor: "#edf2f7",
-                            color: "#4a5568",
-                            border: "1px solid #edf2f7",
-                            borderRadius: "0.25rem",
-                            paddingTop: "0.75rem",
-                            paddingBottom: "0.75rem",
-                            paddingLeft: "1rem",
-                            paddingRight: "1rem",
-                            lineHeight: "1.25",
-                            outline: "none"
-                          }}
-                          id="grid-zip"
-                          type="text"
-                          placeholder={90210}
-                        />
-                      </div>
-                    </div>
-                  </form>
 
-                </div>
-              </section> */}
-              <footer>
-                © {new Date().getFullYear()} divyanshutyagiofficial.com
-              </footer>
-              {/* <div>
-                {" "}
-                <svg
-                  width={300}
-                  height={300}
-                  data-name="corner-bottom-right"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ pointerEvents: "none" }}
-                  data-inlinesvg=".inlineSvgFile-5"
-                >
-                  <defs>
-                    <linearGradient
-                      id="grad2"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="100%"
-                    >
-                      <stop offset={0} className="gradient1" />
-                      <stop offset=".5" className="gradient2" />
-                      <stop offset={1} className="gradient1" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    fill="url('#grad2')"
-                    d="M292 300H0l20-20h255a5 5 0 0 0 5-5V20l20-20v292a8 8 0 0 1-8 8Z"
-                  ></path>
-                </svg>{" "}
-              </div> */}
             </div>
           </div>
         </div>
