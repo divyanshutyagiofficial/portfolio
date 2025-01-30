@@ -211,7 +211,15 @@ export default function Home() {
                       <a
                         rel="noopener"
                         target="_blank"
-                        href="https://edwardjones.com"
+                        href="https://shibasea-mainnet.shibinternal.com/"
+                      >
+                        {" "}
+                        <span>Pancake Swap - Swap App</span>
+                      </a>
+                      <a
+                        rel="noopener"
+                        target="_blank"
+                        href="https://pancakeswap.finance/"
                       >
                         {" "}
                         <span>Edward Jones WebApp</span>
