@@ -13,7 +13,8 @@ export default function Document() {
           name="description"
           content="Best Software Consulting services online. Transform your vision into reality with our expert full-stack development services."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         <link rel="icon" href="/favicon.svg" />
         {/* Other custom meta tags, stylesheets, etc. */}
       </Head>

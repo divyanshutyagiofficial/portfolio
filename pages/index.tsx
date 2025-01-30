@@ -9,32 +9,6 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState<any | null>(0);
 
-  const handleAutomaticScroll = (e: any) => {
-    const target: any = document.querySelectorAll('section')[currentSectionIndex];
-    if (e.deltaY < 0) {
-      // The user is scrolling down.
-      if (target && target.previousElementSibling) {
-        target.previousElementSibling.scrollIntoView();
-      }
-    } else if (e.deltaY > 0) {
-      // The user is scrolling up.
-      if (target && target.nextElementSibling) {
-        target.nextElementSibling.scrollIntoView();
-      }
-    }
-  }
-
-  useEffect(() => {
-    const parentElm = document.getElementById('inner-container');
-    window.addEventListener("wheel", e => {
-      e.preventDefault();
-      handleAutomaticScroll(e);
-    }, { passive: false });
-    if (parentElm) {
-      parentElm.onwheel = function () { return false; }
-    }
-  }, []);
-
   return (
     <main className={styles.main}>
       <div className="main">
@@ -160,10 +134,10 @@ export default function Home() {
                       I am a seasoned Full-Stack Developer with over {new Date().getFullYear() - 2017}+ years of experience.
                       I&apos;ve successfully built <strong>17+ projects from scratch</strong> across <strong>Web3, DeFi, FinTech, Healthcare and enterprise applications</strong>.
                       I&apos;ve worked on a wide range of projects, from dynamic
-                      <p className="highlight">real-time chat applications</p>
+                      <p className="highlight">real-time chat applications{" "}</p>
                       to intricate
-                      <p className="highlight">e-commerce platforms</p> and specifically
-                      <p className="highlight">Blockchain-based applications</p>.
+                      <p className="highlight">{" "}e-commerce platforms</p> and specifically
+                      <p className="highlight">{" "}Blockchain-based applications</p>.
 
                       I&apos;m always up for a challenge and love learning new technologies.
                       I&apos;m passionate about creating <strong>high-performance</strong> and <strong>accessible</strong> interfaces
