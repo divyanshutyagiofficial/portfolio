@@ -73,6 +73,7 @@ jobs:
           name: github-pages
           path: ./out
           retention-days: 1
+          if-no-files-found: error
         continue-on-error: false
 
   deploy:
@@ -82,6 +83,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: List available artifacts (debugging)
+        run: ls -lah ${{ github.workspace }}
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
