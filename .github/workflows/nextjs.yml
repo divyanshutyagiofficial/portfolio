@@ -58,13 +58,21 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
 
       - name: Verify output directory
-        run: ls -lah ./out
+        run: |
+          if [ -d "./out" ]; then
+            echo "Output directory exists. Listing contents:"
+            ls -lah ./out
+          else
+            echo "Error: Output directory './out' not found!"
+            exit 1
+          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: ./out
+          retention-days: 1
         continue-on-error: false
 
   deploy:
@@ -81,7 +89,14 @@ jobs:
           path: ./out
 
       - name: Verify downloaded artifact
-        run: ls -lah ./out
+        run: |
+          if [ -d "./out" ]; then
+            echo "Downloaded artifact exists. Listing contents:"
+            ls -lah ./out
+          else
+            echo "Error: Downloaded artifact './out' not found!"
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages
         id: deployment
