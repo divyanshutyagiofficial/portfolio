@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const DShapeProfile = () => {
   return (
-    <span className="">
+    <span className="flex justify-center items-center lg:justify-start">
       <div
         className="w-[200px] h-[200px] flex items-center justify-center"
         style={{
@@ -30,7 +30,7 @@ const DShapeProfile = () => {
             height="500"
             decoding="async"
             data-nimg="1"
-            className="w-full h-full object-contain absolute"
+            className="w-full h-full object-contain absolute scale-120"
             srcSet="/_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=1080&amp;q=75 2x"
             src="/_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=1080&amp;q=75"
           />
@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className="main">
-        <div className="main-container">
+        <div className="main-container zoom-90 m-auto">
           <div id="main-container-inner" className="main-container-inner">
 
             <div id="inner-container" className="inner-container">
@@ -161,8 +161,8 @@ export default function Home() {
                 </div>
               </header>
 
-              <div>
-                <div className=" flex items-center gap-x-4">
+              <div className="my-16 lg:my-0 lg:mb-10">
+                <div className="flex flex-col lg:flex-row items-center lg:items-end gap-2">
 
                   <div className="lg:px-10">
                     <DShapeProfile />
@@ -177,14 +177,14 @@ export default function Home() {
                 </div>{" "}
               </div>
 
-              <section className="projects-overview">
+              <section className="projects-overview pb-20">
                 <div className="main-message">
                   <div className="welcome-message">
 
 
                     <span id="introduction">
-                      I am a seasoned Full-Stack Developer with over <SlowdownCounter start={0} end={(new Date().getFullYear() - 2017)} duration={3000} />+ years of experience.
-                      I&apos;ve successfully built <strong><SlowdownCounter start={0} end={17} duration={3000} /> + projects from scratch</strong> across <strong>Web3, DeFi, FinTech, Healthcare and enterprise applications</strong>.
+                      I am a seasoned Full-Stack Developer with over <SlowdownCounter start={0} end={(new Date().getFullYear() - 2017)} duration={5000} />+ years of experience.
+                      I&apos;ve successfully built <strong><SlowdownCounter start={0} end={17} duration={10000} /> + projects from scratch</strong> across <strong>Web3, DeFi, FinTech, Healthcare and enterprise applications</strong>.
                       I&apos;ve worked on a wide range of projects, from dynamic {" "}
                       <p className="highlight">real-time chat applications{" "}</p>
                       to intricate
@@ -219,7 +219,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="spacer" />
-                <div className="main-projects">
+                <div className="main-projects w-full lg:w-auto">
                   <h2>
                     My Top Projects
                     {/* {"  -  "}{" "} <span> <Counter /> <span className={styles.shyText}>and counting...</span></span>*/}
