@@ -26,37 +26,23 @@ const Typewriter: React.FC<TypewriterProps> = ({ text }) => {
   }, [text]);
 
   return (
-    <h1 style={styles.heading}>
+    <h1 className="text-white font-mono whitespace-nowrap overflow-hidden pr-2  text-[2rem] lg:text-[3rem]">
       {displayText}
-      <span style={styles.cursor}>|</span>
+      <span className="inline-block w-2 animate-blink">|</span>
     </h1>
   );
 };
 
-const styles = {
-  heading: {
-    color: "white",
-    fontFamily: "monospace",
-    fontSize: "2.85rem",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    // borderRight: "2px solid orange", // Typewriter effect
-    paddingRight: "5px",
-  },
-  cursor: {
-    display: "inline-block",
-    width: "0.5rem",
-    animation: "blink 1s infinite",
-  },
-};
-
-// Add global CSS for blinking cursor animation
+// Add global CSS for blinking cursor animation in Tailwind
 if (typeof window !== "undefined") {
   const styleSheet = document.createElement("style");
   styleSheet.innerHTML = `
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
+    }
+    .animate-blink {
+      animation: blink 1s infinite;
     }
   `;
   document.head.appendChild(styleSheet);
