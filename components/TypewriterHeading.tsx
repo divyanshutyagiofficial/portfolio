@@ -37,10 +37,10 @@ const styles = {
   heading: {
     color: "white",
     fontFamily: "monospace",
-    fontSize: "3rem",
+    fontSize: "2.85rem",
     whiteSpace: "nowrap",
     overflow: "hidden",
-    borderRight: "2px solid orange", // Typewriter effect
+    // borderRight: "2px solid orange", // Typewriter effect
     paddingRight: "5px",
   },
   cursor: {

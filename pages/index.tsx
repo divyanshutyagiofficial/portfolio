@@ -19,7 +19,7 @@ const DShapeProfile = () => {
           backgroundSize: "cover",
         }}
       >
-        <span className="bg-[radial-gradient(circle,#ff7b64,#ffb02c)] overflow-auto rounded-full block w-36 h-36 relative">
+        <span className="bg-[radial-gradient(circle,#ff7b64,#ffb02c)] overflow-hidden rounded-full block w-36 h-36 relative">
           {/* Left Side Curve */}
           {/* <span className="w-[82px] h-[162px] block absolute bg-black rounded-l-[109px] right-[135px]"></span> */}
           {/* Profile Image */}
@@ -31,8 +31,7 @@ const DShapeProfile = () => {
             decoding="async"
             data-nimg="1"
             className="w-full h-full object-contain absolute scale-120"
-            srcSet="/_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=1080&amp;q=75 2x"
-            src="/_next/image?url=%2Fimages%2Fprofile_picture.png&amp;w=1080&amp;q=75"
+            src="/images/profile_picture.png"
           />
           {/* 
         <span className="w-[82px] h-[162px] block absolute bg-black rounded-r-[109px] left-[135px]"></span> */}
@@ -162,7 +161,7 @@ export default function Home() {
               </header>
 
               <div className="my-16 lg:my-0 lg:mb-10">
-                <div className="flex flex-col lg:flex-row items-center lg:items-end gap-2">
+                <div className="flex flex-col lg:flex-row items-center gap-2">
 
                   <div className="lg:px-10">
                     <DShapeProfile />
