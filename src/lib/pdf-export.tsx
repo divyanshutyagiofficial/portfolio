@@ -49,8 +49,12 @@ export async function downloadResumePdf(
 
   const sheet = document.createElement("div");
   sheet.style.width = `${page.width}px`;
-  sheet.style.minHeight = `${page.height}px`;
-  sheet.style.padding = `${padding}px`;
+  sheet.style.minHeight = `${page.height - padding * 2}px`;
+  // Left/right padding is fine — no horizontal slicing happens.
+  // Vertical padding is intentionally omitted here: we add it manually to
+  // every page in the PDF loop below so each page gets equal top+bottom margins.
+  sheet.style.paddingLeft = `${padding}px`;
+  sheet.style.paddingRight = `${padding}px`;
   sheet.style.background = data.theme?.backgroundColor ?? RESUME_DEFAULTS.backgroundColor;
   sheet.style.color = data.theme?.textColor ?? RESUME_DEFAULTS.textColor;
   sheet.style.fontFamily =
@@ -90,6 +94,12 @@ export async function downloadResumePdf(
     });
 
     // 3) Compose multi-page PDF by slicing.
+    //
+    // Each PDF page is full-size (pageWidthPx × pageHeightPx). We fill it with:
+    //   - a top white strip  (padding px)
+    //   - the content slice  (pageHeightPx − 2×padding px)
+    //   - a bottom white strip (padding px)
+    // This gives every page — not just the first — equal top and bottom margins.
     const pdf = new jsPDF({
       unit: "px",
       orientation: "portrait",
@@ -100,49 +110,47 @@ export async function downloadResumePdf(
 
     const pageWidthPx = page.width;
     const pageHeightPx = page.height;
-    const totalHeightCanvasPx = canvas.height;
-    const pageHeightCanvasPx = Math.floor(pageHeightPx * scale);
+    const bg = data.theme?.backgroundColor ?? RESUME_DEFAULTS.backgroundColor;
+
+    // How much of the content canvas each page can show (excluding top+bottom padding).
+    const contentHeightPx = pageHeightPx - padding * 2;
+    const contentHeightCanvasPx = Math.floor(contentHeightPx * scale);
+    const paddingCanvasPx = Math.floor(padding * scale);
+    const fullPageCanvasPx = Math.floor(pageHeightPx * scale);
+
+    const totalContentCanvasPx = canvas.height; // content canvas has NO vertical padding
 
     let y = 0;
     let pageIdx = 0;
-    while (y < totalHeightCanvasPx) {
-      const sliceHeightCanvasPx = Math.min(pageHeightCanvasPx, totalHeightCanvasPx - y);
+    while (y < totalContentCanvasPx) {
+      // How much content fits on this page.
+      const srcH = Math.min(contentHeightCanvasPx, totalContentCanvasPx - y);
 
-      const slice = document.createElement("canvas");
-      slice.width = canvas.width;
-      slice.height = sliceHeightCanvasPx;
-      const ctx = slice.getContext("2d");
+      // Destination canvas = full page size.
+      const dest = document.createElement("canvas");
+      dest.width = canvas.width;
+      dest.height = fullPageCanvasPx;
+      const ctx = dest.getContext("2d");
       if (!ctx) throw new Error("Could not get 2D canvas context");
-      ctx.fillStyle = data.theme?.backgroundColor ?? RESUME_DEFAULTS.backgroundColor;
-      ctx.fillRect(0, 0, slice.width, slice.height);
+
+      // Fill entire page with the background colour (creates top+bottom padding zones).
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, dest.width, dest.height);
+
+      // Draw the content slice starting at paddingCanvasPx from the top.
       ctx.drawImage(
         canvas,
-        0,
-        y,
-        canvas.width,
-        sliceHeightCanvasPx,
-        0,
-        0,
-        canvas.width,
-        sliceHeightCanvasPx,
+        0, y,              // source x, y
+        canvas.width, srcH, // source w, h
+        0, paddingCanvasPx, // dest x, y  ← top padding gap
+        canvas.width, srcH, // dest w, h
       );
 
-      const sliceImg = slice.toDataURL("image/jpeg", 0.95);
-      const sliceHeightPdfPx = sliceHeightCanvasPx / scale;
-
+      const pageImg = dest.toDataURL("image/jpeg", 0.95);
       if (pageIdx > 0) pdf.addPage([pageWidthPx, pageHeightPx], "portrait");
-      pdf.addImage(
-        sliceImg,
-        "JPEG",
-        0,
-        0,
-        pageWidthPx,
-        sliceHeightPdfPx,
-        undefined,
-        "FAST",
-      );
+      pdf.addImage(pageImg, "JPEG", 0, 0, pageWidthPx, pageHeightPx, undefined, "FAST");
 
-      y += sliceHeightCanvasPx;
+      y += srcH;
       pageIdx += 1;
     }
 
