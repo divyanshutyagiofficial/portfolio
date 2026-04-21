@@ -16,6 +16,7 @@ import { SectionHeader } from "./SectionHeader";
 import { domains, type DomainEntry } from "@/data/domains";
 import { personalProjects } from "@/data/projects-personal";
 import { linkedinProjects } from "@/data/projects-linkedin";
+import { useSpotlight } from "@/lib/use-spotlight";
 
 const ICONS = {
   banknote: Banknote,
@@ -97,6 +98,7 @@ function DomainCard({
   index: number;
 }) {
   const Icon = ICONS[domain.icon];
+  const { onMouseMove } = useSpotlight();
 
   return (
     <motion.article
@@ -104,7 +106,8 @@ function DomainCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.35, delay: index * 0.05 }}
-      className="group relative rounded-lg border border-(--color-border-2) bg-(--color-surface-2) p-4 hover:border-(--color-link)/50 hover:bg-(--color-surface-3) transition-all"
+      onMouseMove={onMouseMove}
+      className="card-lift group relative rounded-lg border border-(--color-border-2) bg-(--color-surface-2) p-4 hover:border-(--color-link)/50 hover:bg-(--color-surface-3)/60"
     >
       <header className="flex items-start gap-3">
         <div
@@ -146,7 +149,7 @@ function DomainCard({
           {domain.highlights.map((h) => (
             <span
               key={h}
-              className="px-1.5 py-0.5 text-[10px] font-mono rounded border border-(--color-border) bg-(--color-surface) text-(--color-fg-dim)"
+              className="chip px-1.5 py-0.5 text-[10px] font-mono rounded border border-(--color-border) bg-(--color-surface) text-(--color-fg-dim)"
             >
               {h}
             </span>

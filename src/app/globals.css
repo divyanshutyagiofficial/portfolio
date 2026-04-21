@@ -234,6 +234,171 @@ body::after {
     0 0 12px -2px currentColor;
 }
 
+/* ---------- Card lift (modern subtle hover) ----------
+ * Used on Domain / Skill / Resume cards.
+ *  • Soft lift (-3px) + growing shadow on hover for depth.
+ *  • A thin gradient sweep along the top edge fades in via ::before.
+ *  • A faint background tint shifts toward surface-3 for warmth.
+ *  • Transition is short (260ms) with a refined ease curve.
+ *  • All effects respect prefers-reduced-motion.
+ */
+.card-lift {
+  position: relative;
+  isolation: isolate;
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 260ms ease,
+    background-color 260ms ease;
+  will-change: transform;
+}
+
+.card-lift::before,
+.card-lift::after {
+  z-index: 0;
+}
+
+.card-lift::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 260ms ease;
+  background: linear-gradient(
+    180deg,
+    rgba(88, 166, 255, 0.18) 0%,
+    rgba(88, 166, 255, 0) 35%
+  );
+  mask:
+    linear-gradient(#000, #000) content-box,
+    linear-gradient(#000, #000);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 1px;
+}
+
+/* Cursor-following spotlight (sits above content, never blocks clicks).
+ * Driven by --mx / --my CSS vars set by useSpotlight().
+ */
+.card-lift::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 280ms ease;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(88, 166, 255, 0.10),
+    transparent 55%
+  );
+  mix-blend-mode: plus-lighter;
+}
+
+.card-lift > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 28px -14px rgba(0, 0, 0, 0.55),
+    0 4px 10px -6px rgba(88, 166, 255, 0.18);
+}
+
+.card-lift:hover::before,
+.card-lift:hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-lift,
+  .card-lift::before,
+  .card-lift::after {
+    transition: none;
+  }
+  .card-lift:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Chip hover (skill tags, domain highlights, stack chips) ----------
+ * Tiny lift + brighter border + brighter text. Cheap and feels alive.
+ */
+.chip {
+  transition:
+    transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease;
+}
+.chip:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-fg-muted);
+  color: var(--color-fg);
+  box-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.4);
+}
+@media (prefers-reduced-motion: reduce) {
+  .chip,
+  .chip:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Tactile button press ----------
+ * Subtle pop on :active. Pair with existing hover styles.
+ */
+.btn-press {
+  transition:
+    transform 140ms ease,
+    filter 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-press:active {
+    transform: none;
+  }
+}
+
+/* ---------- Animated nav underline ----------
+ * Slides in from the left on hover. Doesn't fight with the `active` chip.
+ */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 3px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0.7;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {
+    transition: none;
+  }
+}
+
 /* ---------- Print styles for resume page ---------- */
 @media print {
   body::before,

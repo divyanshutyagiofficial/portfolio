@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { skillCategories } from "@/data/skills";
 import { TerminalWindow } from "./TerminalWindow";
 import { SectionHeader } from "./SectionHeader";
+import { useSpotlight } from "@/lib/use-spotlight";
 
 const ACCENTS = [
   "text-(--color-link)",
@@ -16,6 +17,8 @@ const ACCENTS = [
 ];
 
 export function SkillsTerminal() {
+  const { onMouseMove } = useSpotlight();
+
   return (
     <section className="mt-20">
       <SectionHeader
@@ -33,7 +36,8 @@ export function SkillsTerminal() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.35, delay: i * 0.04 }}
-              className="rounded-lg border border-(--color-border-2) bg-(--color-surface-2) p-4 hover:border-(--color-link)/40 transition-colors group"
+              onMouseMove={onMouseMove}
+              className="card-lift group rounded-lg border border-(--color-border-2) bg-(--color-surface-2) p-4 hover:border-(--color-link)/40"
             >
               <header className="flex items-center justify-between mb-3">
                 <h3 className={`font-mono text-sm font-bold ${ACCENTS[i % ACCENTS.length]}`}>
@@ -47,7 +51,7 @@ export function SkillsTerminal() {
                 {cat.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="px-2 py-0.5 text-xs font-mono rounded border border-(--color-border) bg-(--color-surface) text-(--color-fg-dim) group-hover:text-(--color-fg) transition-colors"
+                    className="chip px-2 py-0.5 text-xs font-mono rounded border border-(--color-border) bg-(--color-surface) text-(--color-fg-dim) group-hover:text-(--color-fg)"
                   >
                     {skill}
                   </li>

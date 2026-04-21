@@ -262,7 +262,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         {project.stack.slice(0, 6).map((s) => (
           <span
             key={s}
-            className="px-1.5 py-0.5 text-[10px] rounded bg-(--color-surface) border border-(--color-border) text-(--color-fg-dim)"
+            className="chip px-1.5 py-0.5 text-[10px] rounded bg-(--color-surface) border border-(--color-border) text-(--color-fg-dim)"
           >
             {s}
           </span>

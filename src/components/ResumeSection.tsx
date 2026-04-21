@@ -14,6 +14,7 @@ import type { Resume } from "@/types";
 import { TerminalWindow } from "./TerminalWindow";
 import { SectionHeader } from "./SectionHeader";
 import { fetchResumeJson } from "@/lib/resume-export";
+import { useSpotlight } from "@/lib/use-spotlight";
 
 type Busy = null | "pdf" | "docx";
 
@@ -44,6 +45,7 @@ export function ResumeSection() {
 
 function ResumeCard({ resume, index }: { resume: Resume; index: number }) {
   const [busy, setBusy] = useState<Busy>(null);
+  const { onMouseMove } = useSpotlight();
 
   async function handlePdf() {
     setBusy("pdf");
@@ -79,7 +81,8 @@ function ResumeCard({ resume, index }: { resume: Resume; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="rounded-lg border border-(--color-border-2) bg-(--color-surface-2) p-6 flex flex-col hover:border-(--color-prompt)/50 transition-colors"
+      onMouseMove={onMouseMove}
+      className="card-lift rounded-lg border border-(--color-border-2) bg-(--color-surface-2) p-6 flex flex-col hover:border-(--color-prompt)/50"
     >
       <header className="flex items-start gap-4">
         <span className="inline-flex items-center justify-center w-12 h-12 rounded-md border border-(--color-prompt)/40 bg-(--color-prompt)/5 text-(--color-prompt)">
@@ -106,14 +109,14 @@ function ResumeCard({ resume, index }: { resume: Resume; index: number }) {
       <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2">
         <a
           href={`/resume/?variant=${resume.id}`}
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans border border-(--color-border-2) text-(--color-fg-dim) hover:text-(--color-link) hover:border-(--color-link) transition-colors"
+          className="btn-press inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans border border-(--color-border-2) text-(--color-fg-dim) hover:text-(--color-link) hover:border-(--color-link)"
         >
           <Eye size={12} /> View
         </a>
         <button
           onClick={handlePdf}
           disabled={busy !== null}
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans font-bold border border-(--color-prompt) bg-(--color-prompt) text-(--color-bg) hover:brightness-110 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+          className="btn-press inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans font-bold border border-(--color-prompt) bg-(--color-prompt) text-(--color-bg) hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {busy === "pdf" ? (
             <Loader2 size={12} className="animate-spin" />
@@ -125,7 +128,7 @@ function ResumeCard({ resume, index }: { resume: Resume; index: number }) {
         <button
           onClick={handleDocx}
           disabled={busy !== null}
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans font-medium border border-(--color-link) text-(--color-link) hover:bg-(--color-link) hover:text-(--color-bg) transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          className="btn-press inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans font-medium border border-(--color-link) text-(--color-link) hover:bg-(--color-link) hover:text-(--color-bg) disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {busy === "docx" ? (
             <Loader2 size={12} className="animate-spin" />
@@ -137,7 +140,7 @@ function ResumeCard({ resume, index }: { resume: Resume; index: number }) {
         <a
           href={resume.json}
           download
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans border border-(--color-border-2) text-(--color-fg-dim) hover:text-(--color-keyword) hover:border-(--color-keyword) transition-colors"
+          className="btn-press inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans border border-(--color-border-2) text-(--color-fg-dim) hover:text-(--color-keyword) hover:border-(--color-keyword)"
         >
           <FileCode2 size={12} /> JSON
         </a>

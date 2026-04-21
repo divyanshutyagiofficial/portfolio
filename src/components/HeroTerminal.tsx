@@ -103,7 +103,7 @@ export function HeroTerminal({ onOpenPalette }: Props) {
           >
             <a
               href="#resume"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-(--color-prompt) text-(--color-bg) font-sans text-sm font-bold hover:brightness-110 transition-all hover:-translate-y-0.5"
+              className="btn-press inline-flex items-center gap-2 px-4 py-2 rounded-md bg-(--color-prompt) text-(--color-bg) font-sans text-sm font-bold hover:brightness-110 hover:-translate-y-0.5"
               title="./download_resume.sh"
             >
               <Download size={14} />
@@ -111,21 +111,21 @@ export function HeroTerminal({ onOpenPalette }: Props) {
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-(--color-border-2) hover:border-(--color-link) text-(--color-fg) font-sans text-sm hover:text-(--color-link) transition-colors"
+              className="btn-press inline-flex items-center gap-2 px-4 py-2 rounded-md border border-(--color-border-2) hover:border-(--color-link) text-(--color-fg) font-sans text-sm hover:text-(--color-link)"
               title="cd ~/projects"
             >
               See my work
             </a>
             <a
               href="#domains"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-(--color-border-2) hover:border-(--color-warn) text-(--color-fg-dim) font-sans text-sm hover:text-(--color-warn) transition-colors"
+              className="btn-press inline-flex items-center gap-2 px-4 py-2 rounded-md border border-(--color-border-2) hover:border-(--color-warn) text-(--color-fg-dim) font-sans text-sm hover:text-(--color-warn)"
               title="ls ~/industries/"
             >
               Industries I cover
             </a>
             <button
               onClick={onOpenPalette}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-(--color-border-2) hover:border-(--color-fg) text-(--color-fg-dim) font-sans text-sm hover:text-(--color-fg) transition-colors"
+              className="btn-press inline-flex items-center gap-2 px-3 py-2 rounded-md border border-(--color-border-2) hover:border-(--color-fg) text-(--color-fg-dim) font-sans text-sm hover:text-(--color-fg)"
               title="Open command palette (⌘K)"
             >
               <Command size={14} />

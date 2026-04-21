@@ -83,7 +83,7 @@ export function TopNav({ onOpenPalette }: Props) {
             <a
               key={n.id}
               href={`#${n.id}`}
-              className={`px-2.5 py-1 rounded text-sm transition-colors ${
+              className={`nav-link px-2.5 py-1 rounded text-sm transition-colors ${
                 active === n.id
                   ? "text-(--color-link) bg-(--color-link)/10"
                   : "text-(--color-fg-dim) hover:text-(--color-fg) hover:bg-(--color-surface-2)"
@@ -101,7 +101,7 @@ export function TopNav({ onOpenPalette }: Props) {
           {/* Visible search/palette CTA — discoverable, not just ⌘K */}
           <button
             onClick={onOpenPalette}
-            className="hidden sm:inline-flex items-center gap-2 pl-2 pr-1.5 py-1 rounded border border-(--color-border-2) text-xs text-(--color-fg-dim) hover:text-(--color-fg) hover:border-(--color-fg-muted) transition-colors"
+            className="btn-press hidden sm:inline-flex items-center gap-2 pl-2 pr-1.5 py-1 rounded border border-(--color-border-2) text-xs text-(--color-fg-dim) hover:text-(--color-fg) hover:border-(--color-fg-muted)"
             aria-label="Search or jump to anywhere"
           >
             <Command size={12} />
