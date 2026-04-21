@@ -73,7 +73,7 @@ export function ProjectsSection() {
   }, []);
 
   const all: Project[] = useMemo(
-    () => [...personalProjects, ...linkedinProjects, ...ghProjects],
+    () => [...linkedinProjects, ...personalProjects, ...ghProjects],
     [ghProjects],
   );
 
