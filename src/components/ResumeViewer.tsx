@@ -7,62 +7,21 @@ import {
   ArrowLeft,
   Download,
   FileCode2,
+  FileText,
   Loader2,
-  Mail,
-  MapPin,
-  Phone,
   Printer,
-  Globe,
-  Github,
-  Linkedin,
 } from "lucide-react";
 import { resumes } from "@/data/resumes";
+import { ResumePrintable } from "@/components/ResumePrintable";
+import { fetchResumeJson, type ResumeJson } from "@/lib/resume-export";
 
-interface ResumeJson {
-  personal: {
-    fullName: string;
-    title: string;
-    email: string;
-    phone: string;
-    location: string;
-    website?: string;
-    linkedIn?: string;
-    github?: string;
-    summary: string;
-  };
-  experience: Array<{
-    company: string;
-    role: string;
-    startDate: string;
-    endDate: string;
-    location?: string;
-    bullets: string[];
-  }>;
-  education: Array<{
-    institution: string;
-    degree: string;
-    fieldOfStudy?: string;
-    startDate?: string;
-    endDate?: string;
-    location?: string;
-  }>;
-  projects: Array<{
-    name: string;
-    description?: string;
-    tech?: string[];
-    link?: string;
-    bullets?: string[];
-  }>;
-  skills: string[];
-  certifications?: Array<{ name: string; issuer?: string; date?: string }>;
-  languages?: string[];
-}
+type Busy = null | "pdf" | "docx" | "print";
 
 export function ResumeViewer() {
   const params = useSearchParams();
   const router = useRouter();
   const variant = params.get("variant") ?? resumes[0].id;
-  const wantsPrint = params.get("print") === "1";
+  const downloadParam = params.get("download");
 
   const meta = useMemo(
     () => resumes.find((r) => r.id === variant) ?? resumes[0],
@@ -71,16 +30,13 @@ export function ResumeViewer() {
 
   const [data, setData] = useState<ResumeJson | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState<Busy>(null);
 
   useEffect(() => {
     let alive = true;
     setData(null);
     setError(null);
-    fetch(meta.json)
-      .then((r) => {
-        if (!r.ok) throw new Error(`Failed (${r.status})`);
-        return r.json();
-      })
+    fetchResumeJson(meta.json)
       .then((json) => {
         if (alive) setData(json);
       })
@@ -92,18 +48,55 @@ export function ResumeViewer() {
     };
   }, [meta.json]);
 
-  useEffect(() => {
-    if (wantsPrint && data) {
-      const t = setTimeout(() => window.print(), 600);
-      return () => clearTimeout(t);
+  async function handlePdf() {
+    if (!data) return;
+    setBusy("pdf");
+    try {
+      const { downloadResumePdf } = await import("@/lib/pdf-export");
+      await downloadResumePdf(data);
+    } catch (err) {
+      console.error(err);
+      alert("Failed to export PDF. Please try again.");
+    } finally {
+      setBusy(null);
     }
-  }, [wantsPrint, data]);
+  }
+
+  async function handleDocx() {
+    if (!data) return;
+    setBusy("docx");
+    try {
+      const { downloadResumeDocx } = await import("@/lib/docx-export");
+      await downloadResumeDocx(data);
+    } catch (err) {
+      console.error(err);
+      alert("Failed to export DOCX. Please try again.");
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  function handlePrint() {
+    setBusy("print");
+    setTimeout(() => {
+      window.print();
+      setBusy(null);
+    }, 50);
+  }
+
+  // Auto-trigger downloads via URL params (?download=pdf|docx).
+  useEffect(() => {
+    if (!data || !downloadParam) return;
+    if (downloadParam === "pdf") handlePdf();
+    else if (downloadParam === "docx") handleDocx();
+    else if (downloadParam === "print") handlePrint();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, downloadParam]);
 
   return (
     <div className="min-h-screen bg-(--color-bg) pb-20">
-      {/* Toolbar (hidden in print) */}
       <div className="no-print sticky top-0 z-30 backdrop-blur bg-(--color-surface)/85 border-b border-(--color-border)">
-        <div className="mx-auto max-w-5xl px-4 h-14 flex flex-wrap items-center gap-3">
+        <div className="mx-auto max-w-5xl px-4 h-14 flex flex-wrap items-center gap-2">
           <Link
             href="/"
             className="inline-flex items-center gap-1.5 text-xs font-mono text-(--color-fg-dim) hover:text-(--color-link)"
@@ -136,35 +129,52 @@ export function ResumeViewer() {
 
           <div className="ml-auto flex items-center gap-1.5">
             <button
-              onClick={() => window.print()}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded border border-(--color-border-2) text-(--color-fg-dim) hover:text-(--color-link) hover:border-(--color-link)"
+              onClick={handlePdf}
+              disabled={!data || busy !== null}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-bold rounded bg-(--color-prompt) text-(--color-bg) hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed"
+              title="Download a real PDF (no print dialog)"
             >
-              <Printer size={12} />
-              print / save as PDF
-            </button>
-            {meta.pdf && (
-              <a
-                href={meta.pdf}
-                download
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded bg-(--color-prompt) text-(--color-bg) font-bold hover:brightness-110"
-              >
+              {busy === "pdf" ? (
+                <Loader2 size={12} className="animate-spin" />
+              ) : (
                 <Download size={12} />
-                .pdf
-              </a>
-            )}
+              )}
+              PDF
+            </button>
+            <button
+              onClick={handleDocx}
+              disabled={!data || busy !== null}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-medium rounded border border-(--color-link) text-(--color-link) hover:bg-(--color-link) hover:text-(--color-bg) transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              title="Download an editable Word file (.docx)"
+            >
+              {busy === "docx" ? (
+                <Loader2 size={12} className="animate-spin" />
+              ) : (
+                <FileText size={12} />
+              )}
+              Word
+            </button>
             <a
               href={meta.json}
               download
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded border border-(--color-keyword) text-(--color-keyword) hover:bg-(--color-keyword) hover:text-(--color-bg)"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans rounded border border-(--color-border-2) text-(--color-fg-dim) hover:text-(--color-keyword) hover:border-(--color-keyword)"
+              title="Raw JSON used to build this resume"
             >
               <FileCode2 size={12} />
-              .json
+              JSON
             </a>
+            <button
+              onClick={handlePrint}
+              disabled={!data || busy !== null}
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-mono rounded border border-(--color-border-2) text-(--color-fg-muted) hover:text-(--color-fg-dim) disabled:opacity-50"
+              title="Open the browser print dialog (fallback)"
+            >
+              <Printer size={12} />
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Document */}
       <article className="mx-auto max-w-5xl px-4 sm:px-6 py-8 print:py-0 print:px-0">
         {error && (
           <div className="rounded-md border border-(--color-string)/30 bg-(--color-string)/10 p-4 text-sm font-mono text-(--color-string)">
@@ -180,179 +190,11 @@ export function ResumeViewer() {
         )}
 
         {data && (
-          <div className="bg-white text-slate-900 rounded-lg shadow-2xl print:shadow-none print:rounded-none px-8 sm:px-12 py-10 font-sans leading-relaxed">
-            {/* Header */}
-            <header className="border-b border-slate-200 pb-5">
-              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-                {data.personal.fullName}
-              </h1>
-              <p className="mt-1 text-base text-slate-600">
-                {data.personal.title}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
-                <ContactRow icon={<Mail size={11} />}>
-                  <a href={`mailto:${data.personal.email}`} className="hover:text-blue-700">
-                    {data.personal.email}
-                  </a>
-                </ContactRow>
-                <ContactRow icon={<Phone size={11} />}>{data.personal.phone}</ContactRow>
-                <ContactRow icon={<MapPin size={11} />}>{data.personal.location}</ContactRow>
-                {data.personal.website && (
-                  <ContactRow icon={<Globe size={11} />}>
-                    <a href={data.personal.website} className="hover:text-blue-700" target="_blank" rel="noreferrer">
-                      {data.personal.website.replace(/^https?:\/\//, "")}
-                    </a>
-                  </ContactRow>
-                )}
-                {data.personal.linkedIn && (
-                  <ContactRow icon={<Linkedin size={11} />}>
-                    <a href={data.personal.linkedIn} className="hover:text-blue-700" target="_blank" rel="noreferrer">
-                      {data.personal.linkedIn
-                        .replace(/^https?:\/\//, "")
-                        .replace(/\/$/, "")}
-                    </a>
-                  </ContactRow>
-                )}
-                {data.personal.github && (
-                  <ContactRow icon={<Github size={11} />}>
-                    <a href={data.personal.github} className="hover:text-blue-700" target="_blank" rel="noreferrer">
-                      {data.personal.github
-                        .replace(/^https?:\/\//, "")
-                        .replace(/\/$/, "")}
-                    </a>
-                  </ContactRow>
-                )}
-              </div>
-            </header>
-
-            {/* Summary */}
-            <Section title="Summary">
-              <p className="text-sm text-slate-700">{data.personal.summary}</p>
-            </Section>
-
-            {/* Experience */}
-            <Section title="Experience">
-              <div className="space-y-4">
-                {data.experience.map((e, i) => (
-                  <div key={i}>
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                      <h3 className="font-semibold text-slate-900">
-                        {e.role}{" "}
-                        <span className="font-normal text-slate-600">
-                          · {e.company}
-                        </span>
-                      </h3>
-                      <span className="text-xs text-slate-500 font-mono">
-                        {e.startDate} — {e.endDate}
-                      </span>
-                    </div>
-                    <ul className="mt-1.5 list-disc pl-5 text-sm text-slate-700 space-y-0.5">
-                      {e.bullets.map((b, bi) => (
-                        <li key={bi}>{b}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </Section>
-
-            {/* Projects */}
-            {data.projects.length > 0 && (
-              <Section title="Selected Projects">
-                <div className="space-y-3">
-                  {data.projects.slice(0, 8).map((p, i) => (
-                    <div key={i}>
-                      <h3 className="font-semibold text-slate-900 text-sm">
-                        {p.name}
-                      </h3>
-                      {p.description && (
-                        <p className="text-xs text-slate-500">{p.description}</p>
-                      )}
-                      {p.bullets && p.bullets.length > 0 && (
-                        <ul className="mt-1 list-disc pl-5 text-sm text-slate-700 space-y-0.5">
-                          {p.bullets.map((b, bi) => (
-                            <li key={bi}>{b}</li>
-                          ))}
-                        </ul>
-                      )}
-                      {p.tech && p.tech.length > 0 && (
-                        <p className="mt-1 text-[11px] text-slate-500">
-                          <span className="font-medium">Tech:</span>{" "}
-                          {p.tech.join(" · ")}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </Section>
-            )}
-
-            {/* Skills */}
-            <Section title="Skills">
-              <p className="text-sm text-slate-700">{data.skills.join(" · ")}</p>
-            </Section>
-
-            {/* Education */}
-            <Section title="Education">
-              <div className="space-y-2">
-                {data.education.map((e, i) => (
-                  <div key={i}>
-                    <h3 className="font-semibold text-slate-900 text-sm">
-                      {e.degree}
-                      {e.fieldOfStudy ? `, ${e.fieldOfStudy}` : ""}
-                    </h3>
-                    <p className="text-sm text-slate-600">{e.institution}</p>
-                  </div>
-                ))}
-              </div>
-            </Section>
-
-            {/* Certifications */}
-            {data.certifications && data.certifications.length > 0 && (
-              <Section title="Certifications">
-                <ul className="text-sm text-slate-700 list-disc pl-5">
-                  {data.certifications.map((c, i) => (
-                    <li key={i}>{c.name}</li>
-                  ))}
-                </ul>
-              </Section>
-            )}
-
-            {/* Languages */}
-            {data.languages && data.languages.length > 0 && (
-              <Section title="Languages">
-                <p className="text-sm text-slate-700">{data.languages.join(" · ")}</p>
-              </Section>
-            )}
+          <div className="bg-white text-slate-900 rounded-lg shadow-2xl print:shadow-none print:rounded-none px-8 sm:px-12 py-10">
+            <ResumePrintable data={data} />
           </div>
         )}
       </article>
     </div>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="mt-5 pt-4 border-t border-slate-200">
-      <h2 className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold mb-2">
-        {title}
-      </h2>
-      {children}
-    </section>
-  );
-}
-
-function ContactRow({
-  icon,
-  children,
-}: {
-  icon: React.ReactNode;
-  children: React.ReactNode;
-}) {
-  return (
-    <span className="inline-flex items-center gap-1.5">
-      {icon}
-      {children}
-    </span>
   );
 }

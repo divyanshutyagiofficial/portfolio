@@ -1,0 +1,242 @@
+{
+  "personal": {
+    "fullName": "Divyanshu Tyagi",
+    "title": "Node.js + .NET / C# + Python Full Stack Tech Lead",
+    "email": "divyanshutyagiofficial@gmail.com",
+    "phone": "+91-9756283024",
+    "location": "New Delhi, India",
+    "website": "",
+    "linkedIn": "https://www.linkedin.com/in/divyanshutyagiofficial",
+    "github": "",
+    "summary": "Full Stack Technical Lead with 8+ years building enterprise applications across Node.js (Express, NestJS), .NET 8 / C# (ASP.NET Core Web API, Entity Framework Core) and Python (Django, FastAPI, Flask) with React, Next.js, Angular and TypeScript on the front end. Hands-on with microservices, serverless and event-driven systems on AWS and Azure, including ML-adjacent data pipelines using pandas, NumPy and Airflow. Track record of delivering compliant (PCI, HIPAA, WCAG 2.1 AAA) software and improving delivery efficiency by 20–25% via clean architecture, CI/CD and team mentoring.",
+    "objective": "Targeting a challenging Technical Lead / Software Architect role to leverage cross-stack Node.js, .NET and Python expertise on scalable, secure, data-rich enterprise platforms."
+  },
+  "experience": [
+    {
+      "company": "Altudo Consultancy Services",
+      "role": "Technical Lead",
+      "startDate": "Sep 2024",
+      "endDate": "Present",
+      "location": "",
+      "bullets": [
+        "Lead engineering and architecture for full-stack programs built on Node.js (Express / NestJS), .NET 8 (ASP.NET Core Web API) and Python (FastAPI / Django) services with React, Next.js and Angular frontends.",
+        "Designed and implemented system architecture and a shared design system, enforcing coding standards across Node.js, .NET and Python services for maintainability and consistency.",
+        "Drove end-to-end SDLC ownership — requirements, design, development, code review, testing and deployment — ensuring seamless execution and high-quality delivery.",
+        "Partnered with cross-functional stakeholders to translate business requirements into technical solutions aligned with product goals while minimising rework.",
+        "Ensured application performance, scalability and reliability through proactive monitoring (Application Insights, CloudWatch, Prometheus / Grafana), debugging and continuous improvements.",
+        "Mentored and guided team members across Node.js, .NET and Python tracks, lifting code quality, technical capability and overall team productivity.",
+        "Directed technology planning, vendor evaluation, architectural reviews and operational transformation execution.",
+        "Built robust logical and physical architectures balancing security, performance, availability, compliance, scalability and maintainability."
+      ],
+      "highlights": [
+        "Standardised CI/CD pipelines across npm / pnpm (Node.js), dotnet build (.NET) and pip / poetry (Python) on GitHub Actions and Azure DevOps, reducing pipeline wait time by ~20%.",
+        "Introduced a shared NestJS + ASP.NET Core + FastAPI reference architecture cutting new-service bootstrap effort by ~35% across teams."
+      ]
+    },
+    {
+      "company": "ValueLabs",
+      "role": "Tech Lead / Software Engineer 3",
+      "startDate": "Sep 2023",
+      "endDate": "Apr 2024",
+      "location": "",
+      "bullets": [
+        "Built and optimised Web3 applications including NFT marketplaces, swap platforms and dApp builders backed by Node.js (Express) and ASP.NET Core APIs.",
+        "Developed responsive, accessible applications using React, Next.js, Tailwind CSS and TypeScript.",
+        "Integrated blockchain stacks via Wagmi, WalletConnect and Web3.js for a seamless wallet-first user experience.",
+        "Owned API integrations against Node.js and ASP.NET Core services and authored Python (FastAPI) data-validation utilities for trade and pricing pipelines."
+      ]
+    },
+    {
+      "company": "Publicis Sapient",
+      "role": "Senior Software Engineer",
+      "startDate": "Oct 2021",
+      "endDate": "Sep 2023",
+      "location": "",
+      "bullets": [
+        "Analysed business requirements and shipped industry-standard, scalable solutions across React, Angular, Node.js, ASP.NET Core, C# and Python services.",
+        "Designed and developed RESTful microservices across Node.js (Express / NestJS), .NET (ASP.NET Core Web API) and Python (FastAPI), interoperating via REST and message queues.",
+        "Enforced non-functional requirements — accessibility, security and performance — using automated tooling (SonarQube, OWASP ZAP, Lighthouse)."
+      ]
+    },
+    {
+      "company": "Incedo Inc.",
+      "role": "Senior Software Engineer",
+      "startDate": "Nov 2019",
+      "endDate": "Oct 2021",
+      "location": "",
+      "bullets": [
+        "Delivered full-stack applications on the MEAN stack (MongoDB, Express.js, Angular, Node.js) for diverse client engagements in payments and fintech.",
+        "Authored Python ETL scripts (pandas, NumPy) for data ingestion and transformation feeding Node.js and .NET reporting services."
+      ]
+    },
+    {
+      "company": "Carematix Software India",
+      "role": "Software Developer",
+      "startDate": "Sep 2017",
+      "endDate": "Sep 2019",
+      "location": "",
+      "bullets": [
+        "Built web applications using Angular (2–7), React, Node.js, Express.js, MongoDB and Socket.IO for healthcare clients.",
+        "Delivered end-to-end MEAN-stack features with a strong focus on performance, security and HIPAA-aligned data handling."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "College of Engineering, Roorkee",
+      "degree": "Bachelor of Technology",
+      "fieldOfStudy": "Electronics and Telecommunication Engineering",
+      "startDate": "",
+      "endDate": "",
+      "location": "Roorkee, India",
+      "details": []
+    }
+  ],
+  "projects": [
+    {
+      "name": "Edward Jones — Wealth Management Platform",
+      "description": "Financial services delivery on Node.js + .NET + Python with a Next.js front end",
+      "tech": ["Next.js", "ASP.NET Core", "C#", ".NET 8", "Node.js", "Express.js", "NestJS", "Python", "FastAPI", "PostgreSQL", "SQL Server", "Airflow", "AWS", "Tailwind CSS"],
+      "link": "",
+      "bullets": [
+        "Led delivery of scalable backend services on .NET 8 (ASP.NET Core Web API), Node.js (NestJS) and Python (FastAPI) with a Next.js client.",
+        "Designed REST and GraphQL APIs and integrated them through a Node.js BFF layer aggregating .NET and Python services for the web client.",
+        "Built Python data-pipeline workers (pandas, NumPy, Airflow) feeding the .NET reporting service for portfolio analytics.",
+        "Implemented OAuth 2.0 / JWT authentication, request validation and centralised error-handling middleware across Node.js, .NET and Python services.",
+        "Designed dynamic UI with Redux and Tailwind CSS, improving page-load performance and component reusability."
+      ]
+    },
+    {
+      "name": "Energy Australia — Customer Self-Service",
+      "description": "Microservices delivery on Node.js + .NET 8 + Python with Azure-backed serverless architecture",
+      "tech": ["ASP.NET Core", "C#", ".NET 8", "Node.js", "Express.js", "NestJS", "Python", "FastAPI", "Django", "GraphQL", "Cosmos DB", "Azure SQL", "Azure Functions", "Azure API Management", "GitHub Actions"],
+      "link": "",
+      "bullets": [
+        "Led a team of 6 engineers across Node.js, .NET and Python tracks, owning architecture and delivery of microservices on Azure.",
+        "Designed REST and GraphQL APIs (HotChocolate on .NET, Apollo on Node.js, Strawberry on Python) for seamless integration with React / Next.js apps.",
+        "Built and deployed serverless APIs using Azure Functions (.NET) and AWS Lambda (Node.js + Python) for cost-efficient elastic scale.",
+        "Modelled domain schemas and tuned queries using EF Core, Mongoose and SQLAlchemy, raising data-access throughput by 30%+.",
+        "Established CI/CD pipelines using GitHub Actions and Azure DevOps automating build, test and deploy across all three runtimes.",
+        "Mentored developers, ran code reviews and enforced best practices in performance, security (OWASP) and testing (xUnit, Jest, pytest)."
+      ]
+    },
+    {
+      "name": "STERIS — Headless CMS Migration",
+      "description": "Legacy-to-headless migration with Next.js, Sitecore (.NET), Node.js content services and Python migration tooling",
+      "tech": ["Next.js", "Sitecore JSS", "ASP.NET Core", "C#", "Node.js", "Express.js", "Python", "PowerShell", "SSG", "ISR", "WCAG 2.1"],
+      "link": "",
+      "bullets": [
+        "Led migration from a legacy platform to a modern headless architecture using Next.js, Sitecore JSS (.NET) and Node.js content APIs.",
+        "Developed automated C# console apps, Node.js scripts and Python migration utilities (BeautifulSoup, pandas) for bulk data migration with full data integrity and zero downtime.",
+        "Built a reusable Sitecore component library on top of ASP.NET Core enabling content authors to create WCAG-compliant pages effortlessly.",
+        "Improved Core Web Vitals using SSG and ISR while strengthening frontend security across the polyglot stack."
+      ]
+    },
+    {
+      "name": "US Bank — Smart Router",
+      "description": "Financial transaction routing platform built on Node.js + .NET microservices with Python analytics",
+      "tech": [".NET", "C#", "Node.js", "Express.js", "Python", "Kafka", "Microservices"],
+      "link": "",
+      "bullets": [
+        "Designed and developed key components of a Smart Router platform optimising transaction routing latency and processing speed.",
+        "Built ASP.NET Core routing services interoperating with Node.js (Express) edge gateways via Kafka and REST.",
+        "Authored Python analytics jobs (pandas, NumPy) that scored transactions and produced fraud-detection signals consumed by the .NET pipeline."
+      ]
+    },
+    {
+      "name": "Citi B2B — IncedoPay",
+      "description": "Digital payment & transaction management for ELAN Group, BMW and other enterprise clients",
+      "tech": ["Node.js", "Express.js", ".NET", "C#", "Python", "React", "MongoDB", "Payments", "PCI Compliance"],
+      "link": "",
+      "bullets": [
+        "Developed a B2B digital payment and transaction management system spanning Node.js gateways, ASP.NET Core settlement services and Python reconciliation jobs.",
+        "Delivered secure, scalable payment flows that improved transaction efficiency and customer experience across enterprise tenants."
+      ]
+    },
+    {
+      "name": "PALS — Patient Application for Lupus Studies",
+      "description": "Clinical-trial management platform for Lupus patients (HIPAA-compliant)",
+      "tech": ["Angular", "Node.js", "Express.js", "Python", "Django", "MongoDB", "PostgreSQL", "HIPAA"],
+      "link": "",
+      "bullets": [
+        "Developed a clinical-trial management platform on Node.js + Python (Django) services enabling real-time data capture and patient tracking.",
+        "Improved data accuracy and operational efficiency to support advanced healthcare research, with HIPAA-aligned audit logging."
+      ]
+    },
+    {
+      "name": "Incedo — New Joiner Portal",
+      "description": "Internal employee onboarding platform",
+      "tech": ["Node.js", "Express.js", "Angular", "MongoDB", ".NET", "C#"],
+      "link": "",
+      "bullets": [
+        "Built an internal onboarding platform that streamlined new-hire processes across HR and IT.",
+        "Automated document submission, profile creation and onboarding workflows for measurable operational efficiency."
+      ]
+    },
+    {
+      "name": "ELAN Payment Solutions",
+      "description": "Scalable payment processing systems",
+      "tech": ["Node.js", ".NET", "C#", "Python", "Payments"],
+      "link": "",
+      "bullets": [
+        "Designed and supported scalable payment processing systems combining Node.js APIs, .NET settlement services and Python ETL workers.",
+        "Improved system efficiency, hardened data security and optimised end-to-end transaction workflows."
+      ]
+    }
+  ],
+  "skills": [
+    "Node.js", "Express.js", "NestJS", "Fastify", "TypeScript", "JavaScript", "JSON", "REST APIs", "GraphQL", "Apollo Server", "Socket.IO", "Jest", "Mocha", "Chai", "Supertest", "npm", "pnpm",
+    "C#", ".NET", ".NET 8", ".NET 9", ".NET Core", ".NET Framework", "ASP.NET Core", "ASP.NET Core Web API", "Minimal APIs", "Entity Framework Core", "LINQ", "Dapper", "MediatR", "AutoMapper", "FluentValidation", "SignalR", "gRPC", "xUnit", "NUnit", "Moq",
+    "Python", "Python 3", "Django", "Django REST Framework", "FastAPI", "Flask", "SQLAlchemy", "Alembic", "Pydantic", "Celery", "Airflow", "pandas", "NumPy", "BeautifulSoup", "Requests", "pytest", "uv", "poetry",
+    "React", "Next.js (SSR/ISR/RSC)", "Angular", "Redux Toolkit", "TanStack Query", "Tailwind CSS", "Material UI", "HTML5", "CSS3", "Vite", "Webpack",
+    "PostgreSQL", "MySQL", "SQL Server", "Azure SQL", "Cosmos DB", "MongoDB", "MongoDB Aggregations", "Mongoose", "Prisma ORM", "Redis", "Elasticsearch",
+    "AWS", "AWS Lambda", "AWS API Gateway", "AWS S3", "AWS DynamoDB", "AWS CloudFront", "AWS ECS / Fargate", "AWS SQS / SNS",
+    "Azure", "Azure Functions", "Azure App Service", "Azure API Management", "Azure Service Bus", "Azure Key Vault", "Azure Blob Storage", "Azure Kubernetes Service (AKS)", "Azure DevOps", "Azure Data Factory",
+    "Docker", "Kubernetes", "Helm", "Terraform", "Bicep", "GitHub Actions", "Jenkins", "CI/CD Pipelines",
+    "Apache Kafka", "RabbitMQ", "Microservices", "Serverless Architecture", "Event-Driven Architecture", "Headless Architecture", "Clean Architecture", "Domain-Driven Design (DDD)", "CQRS",
+    "OAuth 2.0", "OIDC", "JWT", "Keycloak", "OWASP Top 10", "PCI Compliance", "HIPAA Compliance", "WCAG 2.1 AAA",
+    "Agile / Scrum", "SAFe", "Requirement Gathering", "Mentoring", "Cross-functional Team Leadership", "Performance Optimization", "Architectural Design", "Legacy System Modernization",
+    "Sitecore", "Sitecore JSS", "Wagmi", "WalletConnect", "Web3.js", "Fintech", "Healthcare Platforms", "Payment Gateways", "Blockchain", "E-commerce Systems"
+  ],
+  "certifications": [
+    { "name": "Node.js, Express & MongoDB — The Complete Bootcamp", "issuer": "", "date": "", "link": "" },
+    { "name": ".NET / ASP.NET Core Course", "issuer": "", "date": "", "link": "" },
+    { "name": "Python for Everybody Specialization", "issuer": "", "date": "", "link": "" },
+    { "name": "Django & Django REST Framework", "issuer": "", "date": "", "link": "" },
+    { "name": "React — The Complete Guide (Hooks, React Router, Redux)", "issuer": "", "date": "", "link": "" }
+  ],
+  "languages": ["Hindi", "English"],
+  "profileSummaryBullets": [
+    "Technical Lead with 8+ years building enterprise software on Node.js (Express, NestJS), .NET 8 / C# (ASP.NET Core) and Python (Django, FastAPI) with React, Next.js and Angular front ends.",
+    "Currently driving multi-team programs as Technical Lead at Altudo, owning architecture, delivery and mentorship for fintech, healthcare and headless CMS clients.",
+    "Designed and shipped microservices, serverless and event-driven systems on AWS and Azure, including Python data pipelines (pandas, NumPy, Airflow) feeding Node.js and .NET services.",
+    "Drove 20–25% improvement in delivery efficiency through standardised CI/CD pipelines (GitHub Actions, Azure DevOps), shared reference architectures and clean-code practices.",
+    "Strong acumen in domain-driven design, clean architecture and CQRS — applied consistently across NestJS, ASP.NET Core and FastAPI services.",
+    "Expertise in adhering to compliance standards including PCI, HIPAA and WCAG 2.1 AAA, with secure-by-default OAuth 2.0 / OIDC, JWT and OWASP Top 10 practices.",
+    "Key people leader who has mentored polyglot Node.js + .NET + Python engineers, lifting code quality, ownership and measurable business impact."
+  ],
+  "coreCompetencies": [
+    "Node.js + .NET + Python Architecture",
+    "Microservices & Event-Driven Systems",
+    "Cloud Engineering (AWS & Azure)",
+    "API Design (REST, GraphQL, gRPC)",
+    "Data Pipelines & ETL",
+    "CI/CD & DevOps Automation",
+    "Compliance & Regulatory Standards",
+    "Cross-functional Team Leadership",
+    "Mentoring & Engineering Culture"
+  ],
+  "skillsTable": [
+    { "category": "Languages", "technologies": "JavaScript (ES2023), TypeScript, C# (.NET 8 / 9), Python 3, SQL, Bash" },
+    { "category": "Node.js Stack", "technologies": "Node.js, Express.js, NestJS, Fastify, REST, GraphQL (Apollo), Socket.IO, Jest, Mocha, npm / pnpm" },
+    { "category": ".NET Stack", "technologies": "C#, .NET 8/9, ASP.NET Core Web API, Minimal APIs, Entity Framework Core, MediatR, SignalR, gRPC, xUnit, Moq" },
+    { "category": "Python Stack", "technologies": "Django, Django REST Framework, FastAPI, Flask, SQLAlchemy, Pydantic, Celery, Airflow, pandas, NumPy, pytest, poetry" },
+    { "category": "Front-end", "technologies": "React, Next.js (SSR/ISR/RSC), Angular, TypeScript, Redux Toolkit, TanStack Query, Tailwind CSS, Material UI" },
+    { "category": "Database & ORM", "technologies": "PostgreSQL, MySQL, SQL Server, Azure SQL, Cosmos DB, MongoDB (Aggregations), Mongoose, Prisma ORM, SQLAlchemy, Redis, Elasticsearch" },
+    { "category": "Cloud – AWS", "technologies": "AWS Lambda, API Gateway, S3, DynamoDB, CloudFront, ECS / Fargate, SQS / SNS" },
+    { "category": "Cloud – Azure", "technologies": "Azure Functions, App Service, API Management, Service Bus, Key Vault, Blob Storage, AKS, DevOps, Data Factory" },
+    { "category": "Architecture", "technologies": "Microservices, Serverless, Event-Driven (Kafka, RabbitMQ), Headless, Clean Architecture, DDD, CQRS" },
+    { "category": "FinTech & Security", "technologies": "PCI Compliance, HIPAA Compliance, WCAG 2.1 AAA, OAuth 2.0 / OIDC, JWT, Keycloak, OWASP Top 10" },
+    { "category": "Tools & Practices", "technologies": "GitHub Actions, Azure DevOps, Jenkins, Docker, Kubernetes, Helm, Terraform, Bicep, Agile / Scrum" }
+  ]
+}

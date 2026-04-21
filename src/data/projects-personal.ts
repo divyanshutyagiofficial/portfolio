@@ -11,7 +11,7 @@ export const personalProjects: Project[] = [
     title: "Resume Builder",
     source: "personal",
     description:
-      "Next.js 15 + React 19 resume builder with multiple templates, live theming, JSON / DOCX / PDF import & export and print-to-PDF — used to generate the polyglot resume on this site.",
+      "Next.js 15 + React 19 resume builder with multiple templates, live theming, JSON / DOCX / PDF import & export — used to author the resume on this site.",
     stack: ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "jsPDF", "docx"],
     domains: ["DevTool"],
     year: 2026,

@@ -38,7 +38,7 @@ export interface SkillCategory {
 export interface Resume {
   id: string;
   name: string;
-  variant: "polyglot" | "javascript" | "java" | "dotnet";
+  variant: "resume";
   description: string;
   highlight: string;
   json: string;

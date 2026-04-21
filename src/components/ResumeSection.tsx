@@ -1,11 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Download, Eye, FileText, FileCode2 } from "lucide-react";
+import {
+  Download,
+  Eye,
+  FileText,
+  FileCode2,
+  Loader2,
+} from "lucide-react";
 import { resumes } from "@/data/resumes";
 import type { Resume } from "@/types";
 import { TerminalWindow } from "./TerminalWindow";
 import { SectionHeader } from "./SectionHeader";
+import { fetchResumeJson } from "@/lib/resume-export";
+
+type Busy = null | "pdf" | "docx";
 
 export function ResumeSection() {
   return (
@@ -13,13 +23,10 @@ export function ResumeSection() {
       <SectionHeader
         id="resume"
         title="Download my resume"
-        command="cat ~/resumes/polyglot.json"
-        comment="One polyglot resume covering Node.js, .NET, React, Next.js and Angular — view it inline, print to PDF, or grab the JSON."
+        command="cat ~/resumes/resume.json"
+        comment="One resume covering Node.js, .NET, React, Next.js and Angular. Always synced from my resume-builder app — view it inline, download as PDF or Word, or grab the raw JSON."
       />
-      <TerminalWindow
-        path="resumes/"
-        hint={`${resumes.length} variant · always in sync`}
-      >
+      <TerminalWindow path="resumes/" hint="always in sync">
         <div className="grid md:grid-cols-1 gap-3 max-w-2xl mx-auto">
           {resumes.map((r, i) => (
             <ResumeCard key={r.id} resume={r} index={i} />
@@ -27,9 +34,8 @@ export function ResumeSection() {
         </div>
         <p className="mt-5 text-xs font-sans text-(--color-fg-muted) text-center">
           <span className="text-(--color-comment) font-mono">{"// "}</span>
-          Generated from a single source-of-truth JSON via the sister
-          resume-builder app. PDF uses the embedded file when present, otherwise
-          falls back to print-to-PDF from the in-app viewer.
+          PDF and Word files are generated client-side from a single source-of-truth
+          JSON, edited and exported from the sister resume-builder app.
         </p>
       </TerminalWindow>
     </section>
@@ -37,6 +43,36 @@ export function ResumeSection() {
 }
 
 function ResumeCard({ resume, index }: { resume: Resume; index: number }) {
+  const [busy, setBusy] = useState<Busy>(null);
+
+  async function handlePdf() {
+    setBusy("pdf");
+    try {
+      const data = await fetchResumeJson(resume.json);
+      const { downloadResumePdf } = await import("@/lib/pdf-export");
+      await downloadResumePdf(data);
+    } catch (err) {
+      console.error(err);
+      alert("Couldn't download PDF. Please try again.");
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  async function handleDocx() {
+    setBusy("docx");
+    try {
+      const data = await fetchResumeJson(resume.json);
+      const { downloadResumeDocx } = await import("@/lib/docx-export");
+      await downloadResumeDocx(data);
+    } catch (err) {
+      console.error(err);
+      alert("Couldn't download Word file. Please try again.");
+    } finally {
+      setBusy(null);
+    }
+  }
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 14 }}
@@ -54,7 +90,7 @@ function ResumeCard({ resume, index }: { resume: Resume; index: number }) {
             {resume.name}
           </h3>
           <p className="text-[11px] font-mono text-(--color-fg-muted) mt-0.5 uppercase tracking-wider">
-            polyglot · single source-of-truth
+            single source of truth · auto-synced
           </p>
         </div>
       </header>
@@ -67,29 +103,37 @@ function ResumeCard({ resume, index }: { resume: Resume; index: number }) {
         {resume.highlight}
       </p>
 
-      <div className="mt-5 grid grid-cols-3 gap-2">
+      <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2">
         <a
           href={`/resume/?variant=${resume.id}`}
           className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans border border-(--color-border-2) text-(--color-fg-dim) hover:text-(--color-link) hover:border-(--color-link) transition-colors"
         >
           <Eye size={12} /> View
         </a>
-        {resume.pdf ? (
-          <a
-            href={resume.pdf}
-            download
-            className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans font-bold border border-(--color-prompt) bg-(--color-prompt) text-(--color-bg) hover:brightness-110 transition-all"
-          >
-            <Download size={12} /> PDF
-          </a>
-        ) : (
-          <a
-            href={`/resume/?variant=${resume.id}&print=1`}
-            className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans font-bold border border-(--color-prompt) bg-(--color-prompt) text-(--color-bg) hover:brightness-110 transition-all"
-          >
-            <Download size={12} /> PDF
-          </a>
-        )}
+        <button
+          onClick={handlePdf}
+          disabled={busy !== null}
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans font-bold border border-(--color-prompt) bg-(--color-prompt) text-(--color-bg) hover:brightness-110 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {busy === "pdf" ? (
+            <Loader2 size={12} className="animate-spin" />
+          ) : (
+            <Download size={12} />
+          )}{" "}
+          PDF
+        </button>
+        <button
+          onClick={handleDocx}
+          disabled={busy !== null}
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-sans font-medium border border-(--color-link) text-(--color-link) hover:bg-(--color-link) hover:text-(--color-bg) transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {busy === "docx" ? (
+            <Loader2 size={12} className="animate-spin" />
+          ) : (
+            <FileText size={12} />
+          )}{" "}
+          Word
+        </button>
         <a
           href={resume.json}
           download
