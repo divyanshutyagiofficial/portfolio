@@ -1,0 +1,39 @@
+# Netlify config for the Next.js 15 static export portfolio.
+# next.config.ts has `output: "export"` + `trailingSlash: true`,
+# so we just build and serve the generated /out folder — no SSR runtime needed.
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-audit --no-fund"
+
+# Custom 404 for unknown routes (static export already emits 404.html,
+# this makes sure Netlify serves it with a 404 status code).
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Security + caching headers.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Hash-named Next.js static assets — cache aggressively.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Resumes + images — medium cache, must-revalidate.
+[[headers]]
+  for = "/resumes/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
