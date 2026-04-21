@@ -1,0 +1,96 @@
+import type { SkillCategory } from "@/types";
+
+export const skillCategories: SkillCategory[] = [
+  {
+    name: "frontend",
+    skills: [
+      "React",
+      "Next.js",
+      "Angular",
+      "TypeScript",
+      "Redux Toolkit",
+      "TanStack Query",
+      "Tailwind CSS",
+      "Material UI",
+      "HTML5",
+      "CSS3",
+    ],
+  },
+  {
+    name: "backend",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      ".NET 8 / C#",
+      "ASP.NET Core",
+      "Entity Framework Core",
+      "Java 17/21",
+      "Spring Boot",
+      "Spring Cloud",
+      "GraphQL",
+      "REST",
+      "gRPC",
+    ],
+  },
+  {
+    name: "data",
+    skills: [
+      "PostgreSQL",
+      "SQL Server",
+      "MongoDB",
+      "Cosmos DB",
+      "Redis",
+      "Elasticsearch",
+      "Kafka",
+      "RabbitMQ",
+    ],
+  },
+  {
+    name: "cloud",
+    skills: [
+      "Azure (Functions, AKS, App Service, API Management)",
+      "AWS (Lambda, S3, DynamoDB, ECS, CloudFront)",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "Bicep",
+      "GitHub Actions",
+      "Azure DevOps",
+    ],
+  },
+  {
+    name: "web3",
+    skills: [
+      "Wagmi",
+      "WalletConnect",
+      "Web3.js",
+      "ethers.js",
+      "Solidity (basics)",
+      "NFT marketplaces",
+    ],
+  },
+  {
+    name: "compliance & quality",
+    skills: [
+      "PCI DSS",
+      "HIPAA",
+      "WCAG 2.1 AAA",
+      "OWASP Top 10",
+      "OAuth 2.0 / OIDC",
+      "JWT",
+      "Performance / Core Web Vitals",
+    ],
+  },
+  {
+    name: "leadership",
+    skills: [
+      "Architectural design",
+      "Cross-functional team leadership",
+      "Mentoring (25+ engineers)",
+      "Code reviews",
+      "Agile / Scrum",
+      "Stakeholder management",
+    ],
+  },
+];

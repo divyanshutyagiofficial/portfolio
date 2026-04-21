@@ -1,0 +1,460 @@
+{
+  "name": "Divyanshu Tyagi's Full Stack Javascript",
+  "templateId": "modern",
+  "theme": {
+    "primaryColor": "#0f172a",
+    "backgroundColor": "#ffffff",
+    "textColor": "#0f172a",
+    "accentColor": "#0f172a",
+    "fontFamily": "system",
+    "baseFontSize": 14,
+    "headingScale": 1.25,
+    "layout": "one-column",
+    "pagePadding": 60,
+    "sectionSpacing": 1.4
+  },
+  "personal": {
+    "fullName": "Divyanshu Tyagi",
+    "title": "Technical Lead",
+    "email": "divyanshutyagiofficial@gmail.com",
+    "phone": "+91-9756283024",
+    "location": "New Delhi, India",
+    "website": "",
+    "linkedIn": "https://www.linkedin.com/in/divyanshutyagiofficial",
+    "github": "",
+    "summary": "Technical Lead with 8+ years in software development and engineering leadership, steering complex enterprise programs across fintech, healthcare, Web3 and headless CMS. Hands-on across .NET / C#, Node.js, React, Next.js, Angular, TypeScript and AWS, with deep experience in microservices, serverless and headless architectures. Track record of leading end-to-end delivery, building compliant (PCI, HIPAA, WCAG 2.1 AAA) systems and improving delivery efficiency by 20–25% through optimized workflows, CI/CD and team mentoring.",
+    "objective": "Excelled in the IT industry, targeting a challenging role as a Software Lead or Architect with a reputed organization."
+  },
+  "education": [
+    {
+      "institution": "College of Engineering, Roorkee",
+      "degree": "Bachelor of Technology",
+      "fieldOfStudy": "Electronics and Telecommunication Engineering",
+      "startDate": "",
+      "endDate": "",
+      "location": "Roorkee, India",
+      "details": []
+    }
+  ],
+  "experience": [
+    {
+      "company": "Altudo Consultancy Services",
+      "role": "Technical Lead",
+      "startDate": "Sep 2024",
+      "endDate": "Present",
+      "location": "",
+      "bullets": [
+        "Designed and implemented system architecture and a shared design system, enforcing coding standards to keep applications maintainable, scalable and consistent across teams.",
+        "Drove end-to-end SDLC ownership — requirement analysis, design, development, code reviews and deployment — ensuring seamless execution and high-quality delivery.",
+        "Partnered with cross-functional stakeholders to translate business requirements into technical solutions aligned with product goals while minimising rework.",
+        "Ensured application performance, scalability and reliability through proactive monitoring, debugging and continuous improvements.",
+        "Mentored and guided team members, lifting code quality, technical capability and overall team productivity.",
+        "Directed technology planning, strategy development, business and operational transformation execution and solution delivery.",
+        "Managed third-party relationships including vendor assessment, negotiation and commercial evaluation; established an architect function for ongoing quality improvements at the architectural layer.",
+        "Built robust logical and physical architectures balancing security, performance, availability, compliance, scalability and maintainability.",
+        "Built robust logical and physical architectures balancing security, performance, availability, compliance, scalability and maintainability."
+      ],
+      "highlights": [
+        "Implemented and optimised CI/CD pipelines and dev processes, reducing pipeline wait time by ~20% and accelerating release cycles."
+      ]
+    },
+    {
+      "company": "ValueLabs",
+      "role": "Tech Lead / Software Engineer 3",
+      "startDate": "Sep 2023",
+      "endDate": "Apr 2024",
+      "location": "",
+      "bullets": [
+        "Specialised in building and optimising Web3 applications including NFT marketplaces, swap platforms and dApp builders.",
+        "Developed responsive, accessible applications using ReactJS, Next.js, Tailwind CSS and TypeScript.",
+        "Integrated blockchain stacks via Wagmi, WalletConnect and Web3.js for a seamless wallet-first user experience.",
+        "Owned API integrations, ensured HIPAA and PCI compliance and led agile teams to high-quality delivery."
+      ]
+    },
+    {
+      "company": "Publicis Sapient",
+      "role": "Senior Software Engineer",
+      "startDate": "Oct 2021",
+      "endDate": "Sep 2023",
+      "location": "",
+      "bullets": [
+        "Analysed business requirements and shipped industry-standard, scalable solutions across sprints.",
+        "Enforced non-functional requirements — accessibility, security and performance — using automated tooling.",
+        "Worked extensively across the JavaScript ecosystem: ReactJS, Angular, Node.js and Express.js."
+      ]
+    },
+    {
+      "company": "Incedo Inc.",
+      "role": "Senior Software Engineer",
+      "startDate": "Nov 2019",
+      "endDate": "Oct 2021",
+      "location": "",
+      "bullets": [
+        "Developed full-stack applications on the MEAN stack across diverse client engagements.",
+        "Contributed to design, development and delivery of scalable solutions while adapting to dynamic project requirements."
+      ]
+    },
+    {
+      "company": "Carematix Software India",
+      "role": "Software Developer",
+      "startDate": "Sep 2017",
+      "endDate": "Sep 2019",
+      "location": "",
+      "bullets": [
+        "Built web applications using Angular (2–7), ReactJS, Node.js, MongoDB, Express.js and Socket.IO.",
+        "Delivered end-to-end MEAN-stack features with a strong focus on performance and maintainability."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "American Board of Obstetrics and Gynecology (ABOG)",
+      "description": "Altudo · Jan 2026 – Present · Healthcare certification platform",
+      "tech": [
+        "React",
+        "Angular",
+        "Figma",
+        "WCAG 2.1"
+      ],
+      "link": "",
+      "bullets": [
+        "Defining the visual language and UI architecture for the ABOG portal — consistent, authoritative and physician-centric.",
+        "Designed complex Continuous Certification dashboards translating 6-year cycles into intuitive progress trackers and data-rich status views.",
+        "Built a scalable design system and reusable React/Angular component library, reducing frontend development effort by ~30%.",
+        "Drove WCAG 2.1 compliance across physician-facing modules.",
+        "Collaborated with PMs and medical SMEs to convert complex certification frameworks (e.g. ACE Pilot) into user-centric interfaces."
+      ]
+    },
+    {
+      "name": "Joint Commission Website Modernization (GrayDot)",
+      "description": "Altudo · Mar 2025 – Present · Healthcare accreditation web platforms",
+      "tech": [
+        "React",
+        "Tailwind CSS",
+        "Design System",
+        "WCAG 2.1 AA",
+        "ARIA"
+      ],
+      "link": "",
+      "bullets": [
+        "Architected and scaled a React/Tailwind design system for brand consistency across TJC, JCI and the “Connect” extranet.",
+        "Led accessibility transformation to WCAG 2.1 AA — high-contrast themes, keyboard navigation and ARIA standards.",
+        "Simplified complex healthcare data (NPSGs, accreditation manuals) through intuitive, searchable UI components.",
+        "Led a cross-functional team bridging UX design and backend API integration to deliver a high-quality “Gold Seal” digital experience."
+      ]
+    },
+    {
+      "name": "US Bank Smart Router",
+      "description": "Financial transaction routing platform",
+      "tech": [
+        ".NET",
+        "C#",
+        "Microservices"
+      ],
+      "link": "",
+      "bullets": [
+        "Designed and developed key components of a Smart Router platform for U.S. Bank, optimising transaction routing and processing speed.",
+        "Delivered secure, scalable, high-availability components within a regulated financial domain."
+      ]
+    },
+    {
+      "name": "CAST API Cloud Project",
+      "description": "In-house cloud platform for code analysis and vulnerability detection",
+      "tech": [
+        ".NET",
+        "Cloud",
+        "Static Analysis"
+      ],
+      "link": "",
+      "bullets": [
+        "Contributed to a cloud-based platform focused on code analysis and vulnerability detection.",
+        "Improved software quality by surfacing security risks, raising code reliability and enforcing coding standards."
+      ]
+    },
+    {
+      "name": "BSI Libretto Financials",
+      "description": "Financial services platform · secure transactions and data integration",
+      "tech": [
+        ".NET",
+        "C#",
+        "SQL"
+      ],
+      "link": "",
+      "bullets": [
+        "Worked on a financial services platform involving secure transaction processing, data management and system integration.",
+        "Delivered high-performance, reliable and scalable solutions aligned with enterprise financial requirements."
+      ]
+    },
+    {
+      "name": "Citi B2B – IncedoPay",
+      "description": "Digital payment & transaction management for enterprise clients (ELAN Group, BMW)",
+      "tech": [
+        "Node.js",
+        "React",
+        "Payments",
+        "PCI Compliance"
+      ],
+      "link": "",
+      "bullets": [
+        "Developed a B2B digital payment and transaction management system for clients including ELAN Group and BMW.",
+        "Delivered secure, scalable payment flows that improved transaction efficiency and customer experience."
+      ]
+    },
+    {
+      "name": "Incedo – New Joiner Portal",
+      "description": "Internal employee onboarding platform",
+      "tech": [
+        "Node.js",
+        "Angular",
+        "MongoDB"
+      ],
+      "link": "",
+      "bullets": [
+        "Built an internal onboarding platform that streamlined new-hire processes.",
+        "Automated document submission, profile creation and onboarding workflows for measurable operational efficiency."
+      ]
+    },
+    {
+      "name": "ELAN Payment Solutions",
+      "description": "Scalable payment processing systems",
+      "tech": [
+        "Node.js",
+        "Payments"
+      ],
+      "link": "",
+      "bullets": [
+        "Designed and supported scalable payment processing systems for ELAN Payment Solutions.",
+        "Improved system efficiency, hardened data security and optimised end-to-end transaction workflows."
+      ]
+    },
+    {
+      "name": "PALS — Patient Application for Lupus Studies",
+      "description": "Clinical trial management platform for Lupus patients",
+      "tech": [
+        "Angular",
+        "Node.js",
+        "MongoDB",
+        "HIPAA"
+      ],
+      "link": "",
+      "bullets": [
+        "Developed a clinical-trial management platform enabling real-time data capture and patient tracking.",
+        "Improved data accuracy and operational efficiency to support advanced healthcare research."
+      ]
+    },
+    {
+      "name": "DRO — Daily Reading Observation",
+      "description": "Healthcare app for daily patient health monitoring",
+      "tech": [
+        "Angular",
+        "Node.js",
+        "Socket.IO"
+      ],
+      "link": "",
+      "bullets": [
+        "Built a healthcare application to monitor and manage daily patient health readings for specialised care programmes.",
+        "Streamlined data collection, improved patient tracking and enabled data-driven treatment decisions."
+      ]
+    },
+    {
+      "name": "Edward Jones",
+      "description": "Financial services frontend & backend feature delivery",
+      "tech": [
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "Redux",
+        "Tailwind CSS",
+        "Python"
+      ],
+      "link": "",
+      "bullets": [
+        "Led development of scalable frontend and backend features for timely, high-quality delivery.",
+        "Built Next.js applications integrated with Node.js / Express APIs for efficient data exchange.",
+        "Designed dynamic UI with Redux and Tailwind CSS to enhance performance and maintainability.",
+        "Collaborated with clients to define requirements and manage cross-team deliverables.",
+        "Implemented secure API integrations with robust authentication and error handling.",
+        "Developed Python-based utilities and data-processing scripts to support backend operations."
+      ]
+    },
+    {
+      "name": "Energy Australia",
+      "description": "Full-stack delivery with AWS-backed serverless architecture",
+      "tech": [
+        "Node.js",
+        "Express.js",
+        "GraphQL",
+        "MongoDB",
+        "Prisma ORM",
+        "AWS Lambda",
+        "API Gateway",
+        "DynamoDB",
+        "S3",
+        "CodePipeline",
+        "GitHub Actions",
+        "React",
+        "Next.js",
+        "Python"
+      ],
+      "link": "",
+      "bullets": [
+        "Led a team of 6 developers, driving full-stack delivery with strong backend architecture in Node.js / Express.js.",
+        "Designed and implemented REST and GraphQL APIs for seamless integration with modern frontend frameworks.",
+        "Managed database schemas and optimised queries using MongoDB and Prisma ORM for efficient data handling.",
+        "Integrated AWS S3 for secure file storage and content delivery, improving system reliability and performance by 30%+.",
+        "Built and deployed serverless apps using AWS Lambda, API Gateway and DynamoDB for scalable, cost-efficient solutions.",
+        "Established CI/CD pipelines using AWS CodePipeline, CodeBuild and GitHub Actions to automate build and deployment.",
+        "Partnered with frontend teams for smooth API integration with React and Next.js apps.",
+        "Mentored developers, ran code reviews and enforced best practices in performance, security and testing.",
+        "Wrote Python-based scripts for data transformation and backend utilities."
+      ]
+    },
+    {
+      "name": "STERIS",
+      "description": "Legacy-to-headless migration with Next.js + Sitecore",
+      "tech": [
+        "Next.js",
+        "Sitecore",
+        "Node.js",
+        "Python",
+        "SSG",
+        "ISR",
+        "WCAG"
+      ],
+      "link": "",
+      "bullets": [
+        "Led migration from a legacy web platform to a modern headless architecture using Next.js and Sitecore, materially improving performance and SEO.",
+        "Developed automated Node.js and Python scripts for bulk data migration with data integrity and zero downtime.",
+        "Built a reusable Sitecore component library enabling content authors to create WCAG-compliant pages effortlessly.",
+        "Improved Core Web Vitals using SSG and ISR while strengthening frontend security.",
+        "Designed scalable CMS architecture supporting dynamic, reusable content and reducing manual effort by 50%."
+      ]
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js (SSR/ISR)",
+    "Angular",
+    "Redux",
+    "Tailwind CSS",
+    "Material UI",
+    "AJAX",
+    "HTML",
+    "CSS",
+    "Node.js",
+    "Express.js",
+    "REST APIs",
+    "GraphQL",
+    "Socket.IO",
+    "JSON",
+    "C#",
+    ".NET Framework",
+    "Python",
+    "MongoDB",
+    "MongoDB Aggregations",
+    "Prisma ORM",
+    "Azure SQL",
+    "AWS Lambda",
+    "AWS API Gateway",
+    "AWS S3",
+    "AWS DynamoDB",
+    "AWS CloudFront",
+    "AWS Fargate",
+    "Azure Data Factory",
+    "Azure Functions",
+    "Azure DevOps",
+    "Azure AD SSO",
+    "Microservices",
+    "Serverless Architecture",
+    "Headless Architecture",
+    "Architectural Design",
+    "CI/CD Pipelines",
+    "Performance Optimization",
+    "Agile Delivery",
+    "Requirement Gathering",
+    "Cross-functional Team Leadership",
+    "Mentoring",
+    "Legacy System Modernization",
+    "User Experience Optimization",
+    "Data Security & Privacy",
+    "PCI Pal",
+    "Braintree",
+    "Zelle",
+    "OAuth",
+    "PCI Compliance",
+    "HIPAA Compliance",
+    "WCAG 2.1 AAA",
+    "Wagmi",
+    "WalletConnect",
+    "Web3.js",
+    "Sitecore",
+    "Fintech",
+    "Healthcare Platforms",
+    "Payment Gateways",
+    "Blockchain",
+    "E-commerce Systems"
+  ],
+  "certifications": [
+    {
+      "name": "Node.js Course",
+      "issuer": "",
+      "date": "",
+      "link": ""
+    },
+    {
+      "name": "Angular 2+ Course",
+      "issuer": "",
+      "date": "",
+      "link": ""
+    },
+    {
+      "name": "React — The Complete Guide (Hooks, React Router, Redux)",
+      "issuer": "",
+      "date": "",
+      "link": ""
+    },
+    {
+      "name": "JavaScript, jQuery and JSON",
+      "issuer": "",
+      "date": "",
+      "link": ""
+    }
+  ],
+  "languages": [
+    "Hindi",
+    "English"
+  ],
+  "profileSummaryBullets": [
+    "Technocrat with over 8 years in Software Development & Technical Leadership, steering complex enterprise projects across fintech, healthcare, Web3 and headless CMS domains.",
+    "Currently driving technical initiatives as Technical Lead at Altudo, coordinating the design and implementation of resilient and scalable software solutions aligned with strategic organisational objectives.",
+    "Led end-to-end technical initiatives, managing a team of developers to deliver scalable, high-quality software solutions, driving 20–25% improvement in delivery efficiency through optimised workflows and collaboration.",
+    "Expertise in Node.js, React, Next.js, Angular, TypeScript, Python and AWS, delivering scalable, high-performance solutions across fintech, healthcare, Web3 and headless CMS domains — including payment systems, clinical platforms and headless architectures.",
+    "Strong acumen in leading end-to-end project delivery, leveraging modern architectures (Microservices, Serverless, Headless), tools like MongoDB, Prisma, GraphQL and CI/CD pipelines, to build secure, compliant (HIPAA/PCI) and performance-optimised applications with measurable business impact.",
+    "Skilled in adhering to compliance standards including PCI, HIPAA and WCAG 2.1 AAA.",
+    "Key People Leader who has successfully led and motivated teams toward growth and success in the organization."
+  ],
+  "coreCompetencies": [
+    "Enterprise Software Architecture",
+    "Cloud Infrastructure Management",
+    "Compliance & Regulatory Standards",
+    "Agile Software Development",
+    "User Experience Optimization",
+    "Data Security and Privacy",
+    "Continuous Integration and Deployment",
+    "Cross-functional Team Leadership",
+    "Legacy System Modernization"
+  ],
+  "skillsTable": [
+    { "category": "Front-end", "technologies": "JavaScript / TypeScript, Next.js (SSR/ISR), React, Angular, Tailwind CSS, Material UI, Redux, AJAX" },
+    { "category": "Back-end", "technologies": "Node.js, Express.js, REST API Development, GraphQL, Socket.io, JSON, Python" },
+    { "category": "Database & ORM", "technologies": "MongoDB (Aggregations), Prisma ORM, Azure SQL, DynamoDB" },
+    { "category": "Cloud – AWS", "technologies": "AWS Lambda, API Gateway, S3, DynamoDB, CloudFront, AWS Fargate, CodePipeline" },
+    { "category": "Cloud – Azure", "technologies": "Azure Data Factory (ETL), Azure Functions, Triggers, Azure DevOps (CI/CD), Azure AD SSO" },
+    { "category": "FinTech & Security", "technologies": "PCI Pal, Braintree, Zelle, OAuth, PCI Compliance, HIPAA Compliance, WCAG 2.1 AAA" },
+    { "category": "Architecture", "technologies": "Microservices, Serverless, Headless Architecture, Architectural Design" },
+    { "category": "Specialized Domains", "technologies": "Financial, Blockchain, Payment Gateways, Healthcare Platforms, E-commerce Systems" },
+    { "category": "Tools & Practices", "technologies": "CI/CD Pipelines, Requirement Gathering, Agile Delivery, Performance Optimization, Mentoring" }
+  ]
+}

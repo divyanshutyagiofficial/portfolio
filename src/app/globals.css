@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+/* ---------- Terminal / IDE theme tokens ---------- */
+@theme {
+  --color-bg: #0a0e14;
+  --color-surface: #0d1117;
+  --color-surface-2: #151a21;
+  --color-surface-3: #1c2128;
+  --color-border: #21262d;
+  --color-border-2: #30363d;
+
+  --color-fg: #e6edf3;
+  --color-fg-dim: #8b949e;
+  --color-fg-muted: #6e7681;
+
+  --color-prompt: #39d353;
+  --color-link: #58a6ff;
+  --color-keyword: #bc8cff;
+  --color-warn: #ffa657;
+  --color-string: #ff7b72;
+  --color-comment: #6e7681;
+  --color-cursor: #58a6ff;
+
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
+    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+/* ---------- Base ---------- */
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(88, 166, 255, 0.35);
+  color: #fff;
+}
+
+/* Subtle global noise/grid background, layered */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(88, 166, 255, 0.08), transparent 50%),
+    radial-gradient(at 100% 0%, rgba(188, 140, 255, 0.06), transparent 50%),
+    radial-gradient(at 50% 100%, rgba(57, 211, 83, 0.05), transparent 50%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-2);
+  border-radius: 5px;
+  border: 2px solid var(--color-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fg-muted);
+}
+
+/* ---------- Terminal animations ---------- */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  92%,
+  100% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.85;
+  }
+  94% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.92;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-blink {
+  animation: blink 1.05s steps(2) infinite;
+}
+.animate-caret-blink {
+  animation: caret-blink 0.9s steps(2) infinite;
+}
+.animate-flicker {
+  animation: flicker 4s ease-in-out infinite;
+}
+
+/* ---------- Reusable terminal classes ---------- */
+.term-window {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+    0 30px 80px -30px rgba(0, 0, 0, 0.6);
+}
+
+.term-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0)
+  );
+  border-bottom: 1px solid var(--color-border);
+  font-size: 12px;
+  color: var(--color-fg-dim);
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot-red {
+  background: #ff5f57;
+}
+.dot-yellow {
+  background: #febc2e;
+}
+.dot-green {
+  background: #28c840;
+}
+
+/* ---------- Glow accent ---------- */
+.text-glow {
+  text-shadow:
+    0 0 4px currentColor,
+    0 0 18px currentColor;
+}
+
+.glow-sm {
+  box-shadow:
+    0 0 0 1px currentColor inset,
+    0 0 12px -2px currentColor;
+}
+
+/* ---------- Print styles for resume page ---------- */
+@media print {
+  body::before,
+  body::after {
+    display: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

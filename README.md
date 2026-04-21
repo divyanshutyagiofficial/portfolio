@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# divyanshutyagiofficial.com — Portfolio
 
-## Getting Started
+Personal portfolio for **Divyanshu Tyagi** — Full-Stack Technical Lead.
 
-First, run the development server:
+Built as a terminal/IDE-themed single-page experience. Live at
+[https://www.divyanshutyagiofficial.com](https://www.divyanshutyagiofficial.com).
+
+## Stack
+
+- **Next.js 15** with the App Router and `output: 'export'` for static hosting
+- **React 19** + TypeScript 5
+- **Tailwind CSS 4** (with the new `@tailwindcss/postcss` engine)
+- **framer-motion** for section reveals & micro-interactions
+- **lucide-react** for icons
+
+Hosted on **GitHub Pages**, custom domain via `public/CNAME`.
+
+## Sections
+
+- **Hero** — animated terminal prompt cycling through commands
+- **About** — terminal-styled bio block
+- **Skills** — categorised "filesystem" view of skills
+- **Projects** — `git log`-styled feed merging three sources:
+  - Hardcoded production work (`src/data/projects-personal.ts`)
+  - LinkedIn highlights (`src/data/projects-linkedin.ts`)
+  - **Live** GitHub repos via the public REST API
+- **GitHub** — live contributions heatmap (identical to github.com), language
+  bars, recent repos, current/longest streak stats
+- **Resume** — three downloadable variants (JS, .NET, Java) backed by JSON
+  files in `public/resumes/`. Each variant has a live in-app viewer at
+  `/resume?variant=<id>` with a one-click "print → PDF" flow
+- **Contact** — JSON-styled contact block
+
+Plus:
+
+- `⌘K` / `Ctrl+K` command palette for instant nav
+- macOS-style boot sequence on first visit (gated by `sessionStorage`)
+- VS Code-style status bar
+
+## Local dev
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm run dev          # http://localhost:3000
+npm run typecheck
+npm run lint
+npm run build        # writes static export to ./out
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Pushes to `develop` trigger the workflow at
+`.github/workflows/nextjs.yml`, which:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Installs deps with `npm ci`
+2. Type-checks
+3. Builds the static export (`./out`)
+4. Uploads as a Pages artifact
+5. Deploys to GitHub Pages
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Pull requests to `develop` run a lighter check (`pr-check.yml`).
 
-## Learn More
+## Adding a new project
 
-To learn more about Next.js, take a look at the following resources:
+- **Production / closed-source work** → add to `src/data/projects-personal.ts`
+- **LinkedIn-flavoured highlights** → add to `src/data/projects-linkedin.ts`
+- **Open-source repos** → push to GitHub; the homepage will pick it up
+  automatically on next visit (cached for 6 h in `sessionStorage`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Updating resumes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Edit the JSON files in `public/resumes/`. They're consumed both by the in-app
+viewer (`/resume`) and (optionally) shipped as PDF alongside if you drop a
+`divyanshu-tyagi-<variant>-fullstack.pdf` next to the JSON.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The JSON shape lives in `src/components/ResumeViewer.tsx#ResumeJson`.
